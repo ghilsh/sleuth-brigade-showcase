@@ -1,0 +1,13 @@
+[gd_scene load_steps=4 format=3 uid="uid://cmvpiio6gajmb"]
+
+[ext_resource type="PackedScene" uid="uid://duxvg4yh4tj66" path="res://Entities/NPCs/npc.tscn" id="1_4tbsr"]
+[ext_resource type="Script" path="res://Entities/NPCs/Doug/Doug.gd" id="2_kqxbc"]
+[ext_resource type="Texture2D" uid="uid://dvjn1pmia4bnu" path="res://Assets/Images/doug.png" id="2_pmans"]
+
+[node name="Doug" instance=ExtResource("1_4tbsr")]
+script = ExtResource("2_kqxbc")
+
+[node name="Sprite" parent="." index="1"]
+position = Vector2(0, -57)
+texture = ExtResource("2_pmans")
+hframes = 5

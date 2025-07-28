@@ -1,0 +1,10 @@
+[gd_scene load_steps=3 format=3 uid="uid://qqloqmxxl782"]
+
+[ext_resource type="PackedScene" uid="uid://duxvg4yh4tj66" path="res://Entities/NPCs/npc.tscn" id="1_opccm"]
+[ext_resource type="Texture2D" uid="uid://bo5smcduiscim" path="res://Assets/Images/oldguy.png" id="2_digf3"]
+
+[node name="OldGuy" instance=ExtResource("1_opccm")]
+
+[node name="Sprite" parent="." index="1"]
+position = Vector2(0, -51)
+texture = ExtResource("2_digf3")

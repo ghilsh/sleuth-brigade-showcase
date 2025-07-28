@@ -1,0 +1,10 @@
+[
+	{
+		"Portrait": 1, "Character": "bartender", "Expression": "neutral", "Setup": [0,"travis"],
+		"Text": "Hello i am the bartender. I am the bartender. Yeah."
+	},
+	{
+		"Portrait": 0, "Character": "travis", "Expression": "neutral",
+		"Text": "Wow"
+	}
+]

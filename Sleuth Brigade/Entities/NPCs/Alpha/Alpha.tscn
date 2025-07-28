@@ -1,0 +1,9 @@
+[gd_scene load_steps=3 format=3 uid="uid://rjo5sv4k61g3"]
+
+[ext_resource type="PackedScene" uid="uid://duxvg4yh4tj66" path="res://Entities/NPCs/npc.tscn" id="1_st2t6"]
+[ext_resource type="Texture2D" uid="uid://x54p7gdvd15y" path="res://Assets/Images/alpha.png" id="2_l2pqi"]
+
+[node name="Alpha" instance=ExtResource("1_st2t6")]
+
+[node name="Sprite" parent="." index="1"]
+texture = ExtResource("2_l2pqi")

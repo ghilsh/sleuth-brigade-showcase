@@ -1,0 +1,64 @@
+[gd_scene load_steps=4 format=3 uid="uid://df861b84txmwp"]
+
+[ext_resource type="Script" path="res://UI/Options/Options.gd" id="1_gncrl"]
+[ext_resource type="Theme" uid="uid://dn5d38v6n5gsg" path="res://UI/button.tres" id="2_5n43a"]
+[ext_resource type="AudioStream" uid="uid://yrgencpsfejm" path="res://Assets/Audio/Sounds/snd_select.ogg" id="3_nimwn"]
+
+[node name="Options" type="VBoxContainer"]
+script = ExtResource("1_gncrl")
+
+[node name="Volume" type="Button" parent="."]
+layout_mode = 2
+focus_neighbor_top = NodePath("../Back")
+mouse_filter = 2
+theme = ExtResource("2_5n43a")
+text = "Master Volume: <100%>"
+alignment = 0
+
+[node name="Controls" type="Button" parent="."]
+layout_mode = 2
+mouse_filter = 2
+theme = ExtResource("2_5n43a")
+text = "Configure Controls"
+alignment = 0
+
+[node name="Fullscreen" type="Button" parent="."]
+layout_mode = 2
+mouse_filter = 2
+theme = ExtResource("2_5n43a")
+text = "Fullscreen: OFF"
+alignment = 0
+
+[node name="Resolution" type="Button" parent="."]
+visible = false
+layout_mode = 2
+mouse_filter = 2
+theme = ExtResource("2_5n43a")
+text = "Resolution: <2x>"
+alignment = 0
+
+[node name="Shake" type="Button" parent="."]
+layout_mode = 2
+mouse_filter = 2
+theme = ExtResource("2_5n43a")
+text = "Screen Shake: ON"
+alignment = 0
+
+[node name="Timer" type="Button" parent="."]
+layout_mode = 2
+mouse_filter = 2
+theme = ExtResource("2_5n43a")
+text = "Timer: ON"
+alignment = 0
+
+[node name="Back" type="Button" parent="."]
+layout_mode = 2
+focus_neighbor_bottom = NodePath("../Volume")
+mouse_filter = 2
+theme = ExtResource("2_5n43a")
+text = "Back"
+alignment = 0
+
+[node name="Select" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_nimwn")
+bus = &"sfx"

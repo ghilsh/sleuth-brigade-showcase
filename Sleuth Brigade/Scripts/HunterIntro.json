@@ -1,0 +1,78 @@
+[
+	{
+		"Portrait": 1, "Character": "hunter", "Expression": "neutral",
+		"Text": "You alright mate?"
+	},
+	{
+		"Portrait": 0, "Character": "travis", "Expression": "neutral",
+		"Text": "Could be worse. You got a problem?"
+	},
+	{
+		"Portrait": 1, "Character": "hunter", "Expression": "lookback",
+		"Text": "Just figured I'd warn you about the whole shebang in that cavern back there..."
+	},
+	{
+		"Portrait": 1, "Character": "hunter", "Expression": "neutral",
+		"Text": "See, I was treating myself to a looksie around the premises when I found myself taking a peak at the other end of that crevasse behind me."
+	},
+	{
+		"Portrait": 1, "Character": "hunter", "Expression": "neutral",
+		"Text": "However, as I waltzed on into it, some sludge creature crept up behind me! Only narrowly escaped by the skin of my teeth."
+	},
+	{
+		"Portrait": 1, "Character": "hunter", "Expression": "shifty",
+		"Text": "Alas, as more of a lover then a fighter, I'm stuck here twiddling my thumbs 'till the that cretin buggers off..."
+	},
+	{
+		"Portrait": 0, "Character": "travis", "Expression": "neutral",
+		"Text": "Well I'll have you know that I'm actually a fed, so I'm more then qualified to handle that for you."
+	},
+	{
+		"Portrait": 1, "Character": "hunter", "Expression": "haughty",
+		"Text": "What, with that flimsy piece of wood you're holding? Not a chance, mate!"
+	},
+	{
+		"Portrait": 1, "Character": "hunter", "Expression": "haughty",
+		"Text": "You'd be a goner before you could even get a swing in!"
+	},
+	{
+		"Portrait": 1, "Character": "hunter", "Expression": "lookback",
+		"Text": "But hey, I've been stumbling across abandoned equipment 'n shit here and there that may prove itself useful in your hands..."
+	},
+	{
+		"Portrait": 1, "Character": "hunter", "Expression": "shifty",
+		"Text": "I reckon it'd be wise for you to have a look around. Perhaps you'll find something that'll gives you the upper hand on our lovely friend back there..."
+	},
+	{
+		"Portrait": 0, "Character": "travis", "Expression": "neutral",
+		"Text": "I'll keep you posted."
+	},
+	{
+		"Portrait": 1, "Character": "hunter", "Expression": "neutral", "Tag": "spoken",
+		"Text": "What are you looking at?"
+	},
+	{
+		"Portrait": 1, "Character": "hunter", "Expression": "shifty",
+		"Text": "I'm more then just a pretty face, y'know..."
+	},
+	{
+		"Portrait": 0, "Character": "travis", "Expression": "neutral",
+		"Text": "Oh."
+	},
+	{
+		"Portrait": 1, "Character": "hunter", "Expression": "neutral", "Tag": "spokentwice", "Setup": [0,"travis"],
+		"Text": "Quit staring at me boy."
+	},
+	{
+		"Portrait": 1, "Character": "hunter", "Expression": "neutral", "Tag": "beartrap", "Setup": [0,"travis"],
+		"Text": "Ah, got our hands on a cheeky lil' beartrap, have we?"
+	},
+	{
+		"Portrait": 1, "Character": "hunter", "Expression": "shifty",
+		"Text": "Trap that monster with one of these and you might actually be able to put that flimsy bat of yours to use..."
+	},
+	{
+		"Portrait": 1, "Character": "hunter", "Expression": "shifty",
+		"Text": "Granted, I wouldn't imagine it'd be hard for a beast like that to break through one of those, so try to be quick with it..."
+	}
+]

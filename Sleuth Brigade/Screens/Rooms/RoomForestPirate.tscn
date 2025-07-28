@@ -1,0 +1,132 @@
+[gd_scene load_steps=8 format=3 uid="uid://c1p1f6yfnr2jp"]
+
+[ext_resource type="Script" path="res://Screens/Rooms/Room.gd" id="1_yvrl5"]
+[ext_resource type="Texture2D" uid="uid://cgip63266f5p4" path="res://Assets/Images/Tiles/tiles_pirate.png" id="2_2idh0"]
+[ext_resource type="PackedScene" uid="uid://byhmbw73rxff0" path="res://Entities/Player/Player.tscn" id="3_c0w5r"]
+[ext_resource type="Script" path="res://Triggers/Exit.gd" id="5_2cdfh"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_u2e4e"]
+texture = ExtResource("2_2idh0")
+texture_region_size = Vector2i(64, 64)
+0:0/0 = 0
+0:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+0:0/0/physics_layer_0/angular_velocity = 0.0
+0:0/0/physics_layer_1/linear_velocity = Vector2(0, 0)
+0:0/0/physics_layer_1/angular_velocity = 0.0
+1:0/0 = 0
+1:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+1:0/0/physics_layer_0/angular_velocity = 0.0
+1:0/0/physics_layer_1/linear_velocity = Vector2(0, 0)
+1:0/0/physics_layer_1/angular_velocity = 0.0
+2:0/0 = 0
+2:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+2:0/0/physics_layer_0/angular_velocity = 0.0
+2:0/0/physics_layer_1/linear_velocity = Vector2(0, 0)
+2:0/0/physics_layer_1/angular_velocity = 0.0
+0:1/0 = 0
+0:1/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+0:1/0/physics_layer_0/angular_velocity = 0.0
+0:1/0/physics_layer_1/linear_velocity = Vector2(0, 0)
+0:1/0/physics_layer_1/angular_velocity = 0.0
+0:1/0/physics_layer_1/polygon_0/points = PackedVector2Array(-32, -32, 32, -32, 32, 32, -32, 32)
+0:1/0/custom_data_0 = "wood"
+1:1/0 = 0
+1:1/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+1:1/0/physics_layer_0/angular_velocity = 0.0
+1:1/0/physics_layer_1/linear_velocity = Vector2(0, 0)
+1:1/0/physics_layer_1/angular_velocity = 0.0
+1:1/0/physics_layer_1/polygon_0/points = PackedVector2Array(-32, -32, 32, -32, 32, 32, -32, 32)
+1:1/0/custom_data_0 = "wood"
+2:1/0 = 0
+2:1/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+2:1/0/physics_layer_0/angular_velocity = 0.0
+2:1/0/physics_layer_1/linear_velocity = Vector2(0, 0)
+2:1/0/physics_layer_1/angular_velocity = 0.0
+2:1/0/physics_layer_1/polygon_0/points = PackedVector2Array(-32, -32, 32, -32, 32, 32, -32, 32)
+2:1/0/custom_data_0 = "wood"
+3:0/size_in_atlas = Vector2i(1, 2)
+3:0/0 = 0
+3:0/0/texture_origin = Vector2i(-10, 10)
+3:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+3:0/0/physics_layer_0/angular_velocity = 0.0
+3:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-20, -48, 40, -48, 40, 52, -20, 52)
+3:0/0/physics_layer_1/linear_velocity = Vector2(0, 0)
+3:0/0/physics_layer_1/angular_velocity = 0.0
+4:0/size_in_atlas = Vector2i(2, 1)
+4:0/0 = 0
+4:0/0/texture_origin = Vector2i(-50, -30)
+4:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+4:0/0/physics_layer_0/angular_velocity = 0.0
+4:0/0/physics_layer_1/linear_velocity = Vector2(0, 0)
+4:0/0/physics_layer_1/angular_velocity = 0.0
+4:1/0 = 0
+4:1/0/texture_origin = Vector2i(-5, 15)
+4:1/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+4:1/0/physics_layer_0/angular_velocity = 0.0
+4:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-28, 4, 36, 4, 36, -48, -28, -48)
+4:1/0/physics_layer_1/linear_velocity = Vector2(0, 0)
+4:1/0/physics_layer_1/angular_velocity = 0.0
+5:1/size_in_atlas = Vector2i(2, 1)
+5:1/0 = 0
+5:1/0/texture_origin = Vector2i(-10, -20)
+5:1/0/y_sort_origin = 6
+5:1/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+5:1/0/physics_layer_0/angular_velocity = 0.0
+5:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, 40, 76, 40, 76, 0, -16, 0)
+5:1/0/physics_layer_1/linear_velocity = Vector2(0, 0)
+5:1/0/physics_layer_1/angular_velocity = 0.0
+6:0/0 = 0
+6:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+6:0/0/physics_layer_0/angular_velocity = 0.0
+6:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-32, -32, 32, -32, 32, 32, -32, 32)
+6:0/0/physics_layer_1/linear_velocity = Vector2(0, 0)
+6:0/0/physics_layer_1/angular_velocity = 0.0
+
+[sub_resource type="TileSet" id="TileSet_6etff"]
+tile_size = Vector2i(64, 64)
+physics_layer_0/collision_layer = 5
+physics_layer_0/collision_mask = 5
+physics_layer_1/collision_layer = 2
+physics_layer_1/collision_mask = 2
+custom_data_layer_0/name = "Terrain"
+custom_data_layer_0/type = 4
+sources/1 = SubResource("TileSetAtlasSource_u2e4e")
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_f11q5"]
+size = Vector2(128, 63.75)
+
+[node name="RoomForestIntroShed" type="Node2D"]
+script = ExtResource("1_yvrl5")
+outside = false
+music = &"forest"
+ambience = &"wind"
+music_volume = 5.0
+ambience_volume = 0.0
+
+[node name="TileMap" type="TileMap" parent="."]
+z_index = -1
+y_sort_enabled = true
+tile_set = SubResource("TileSet_6etff")
+format = 2
+layer_0/name = "collision"
+layer_0/tile_data = PackedInt32Array(458759, 393217, 0, 458758, 393217, 0, 393221, 393217, 0, 327685, 393217, 0, 262149, 393217, 0, 196614, 393217, 0, 196615, 393217, 0, 196616, 393217, 0, 196617, 393217, 0, 196618, 393217, 0, 196619, 393217, 0, 262156, 393217, 0, 327692, 393217, 0, 393228, 393217, 0, 458763, 393217, 0, 458762, 393217, 0)
+layer_1/name = "base"
+layer_1/tile_data = PackedInt32Array(262154, 65537, 1, 262153, 65537, 1, 262152, 65537, 1, 262151, 65537, 1, 393223, 65537, 1, 393224, 65537, 1, 393225, 65537, 1, 393226, 65537, 1, 327690, 65537, 1, 327689, 65537, 1, 327688, 65537, 1, 327687, 65537, 1, 196617, 65537, 0, 196616, 65537, 0, 196615, 65537, 0, 196618, 65537, 0, 131079, 65537, 0, 131080, 65537, 0, 131081, 65537, 0, 131082, 65537, 0, 458760, 1, 1, 458761, 131073, 1, 131083, 131073, 0, 196619, 65537, 0, 262155, 65537, 1, 327691, 65537, 1, 393227, 131073, 1, 131078, 1, 0, 196614, 65537, 0, 262150, 65537, 1, 327686, 65537, 1, 393222, 1, 1)
+layer_2/name = "decor"
+layer_2/y_sort_enabled = true
+layer_2/z_index = 1
+layer_2/tile_data = PackedInt32Array(131078, 262145, 0, 262151, 196609, 0, 262150, 262145, 1, 262154, 327681, 1)
+
+[node name="Player" parent="." instance=ExtResource("3_c0w5r")]
+position = Vector2(582, 442)
+
+[node name="Exit" type="Area2D" parent="."]
+position = Vector2(0, -59)
+script = ExtResource("5_2cdfh")
+destination = "res://Screens/Rooms/RoomForest.tscn"
+tag = 6
+metadata/_edit_group_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Exit"]
+position = Vector2(576, 547.875)
+shape = SubResource("RectangleShape2D_f11q5")

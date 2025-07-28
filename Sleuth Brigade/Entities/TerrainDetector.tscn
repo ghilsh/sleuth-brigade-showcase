@@ -1,0 +1,19 @@
+[gd_scene load_steps=4 format=3 uid="uid://d21kh8iutsemt"]
+
+[ext_resource type="Script" path="res://Entities/TerrainDetector.gd" id="1_1xr57"]
+[ext_resource type="AudioStream" uid="uid://bsumwk72gkyee" path="res://Assets/Audio/Sounds/Footsteps/snd_footstep_grass.ogg" id="2_hnfcy"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ka60o"]
+size = Vector2(2, 2)
+
+[node name="TerrainDetector" type="Area2D"]
+collision_layer = 2
+collision_mask = 2
+script = ExtResource("1_1xr57")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_ka60o")
+
+[node name="Footstep" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("2_hnfcy")
+bus = &"sfx"

@@ -1,0 +1,576 @@
+[gd_scene load_steps=26 format=3 uid="uid://dcu37g0vie06h"]
+
+[ext_resource type="Texture2D" uid="uid://b153teq2y5o28" path="res://Assets/Images/helicopter.png" id="1_52tin"]
+[ext_resource type="Texture2D" uid="uid://cl1oedb7e7ibt" path="res://Assets/Images/cloud.png" id="1_ddg1r"]
+[ext_resource type="Script" path="res://Screens/Intro.gd" id="1_ptqdd"]
+[ext_resource type="Texture2D" uid="uid://cu3b8021h5ehh" path="res://Assets/Images/travis.png" id="2_k3mgm"]
+[ext_resource type="Texture2D" uid="uid://ct88hw3ut8kkb" path="res://Assets/Images/helicopter_door.png" id="3_l6kfg"]
+[ext_resource type="Texture2D" uid="uid://b6u6jv5jmdh1v" path="res://Assets/Images/Archive/slug.png" id="3_sw551"]
+[ext_resource type="Texture2D" uid="uid://dngp03n8fsxpa" path="res://Assets/Images/helicopter_prop.png" id="6_x7ey2"]
+[ext_resource type="AudioStream" uid="uid://da8nf0fpppi0a" path="res://Assets/Audio/Sounds/snd_break.ogg" id="7_k8ha8"]
+[ext_resource type="AudioStream" uid="uid://dxjowgqm7ncah" path="res://Assets/Audio/Sounds/snd_helicopter.ogg" id="7_qxwp2"]
+[ext_resource type="AudioStream" uid="uid://otvoh1fkq8px" path="res://Assets/Audio/Sounds/snd_multiswish.ogg" id="8_sltjp"]
+[ext_resource type="FontFile" uid="uid://6c8b2kkn2x1q" path="res://Assets/Fonts/PixeloidSans-nR3g1.ttf" id="9_joi4m"]
+[ext_resource type="AudioStream" uid="uid://cf6iyn51pvi2m" path="res://Assets/Audio/Sounds/snd_typewriter.ogg" id="11_kjf7f"]
+[ext_resource type="AudioStream" uid="uid://btt5c4nlwmbok" path="res://Assets/Audio/Sounds/Footsteps/snd_footstep_stone.ogg" id="12_vvsaa"]
+
+[sub_resource type="Animation" id="Animation_nvn3f"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("HelicopterPivot/Helicopter/Sprites/Prop:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(2, 2)]
+}
+
+[sub_resource type="Animation" id="Animation_6xwxb"]
+resource_name = "spin"
+length = 0.4
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("HelicopterPivot/Helicopter/Sprites/Prop:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(2, 2), Vector2(-2, 2)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_frex0"]
+_data = {
+"RESET": SubResource("Animation_nvn3f"),
+"spin": SubResource("Animation_6xwxb")
+}
+
+[sub_resource type="Animation" id="Animation_gwlfe"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 111)]
+}
+
+[sub_resource type="Animation" id="Animation_1dloy"]
+resource_name = "idle"
+length = 0.9
+loop_mode = 1
+step = 0.05
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.25, 0.5, 0.75),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [0.00872665, -0.00872665, 0.00872665, -0.00872665]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(0, 111), Vector2(0, 120)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_s5ynw"]
+_data = {
+"RESET": SubResource("Animation_gwlfe"),
+"idle": SubResource("Animation_1dloy")
+}
+
+[sub_resource type="Animation" id="Animation_f3ghb"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Helicopter/Sprites/Door:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(-62, 140)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Helicopter/Sprites/Door:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Helicopter/Sprites/Travis:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(-60, 140)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Helicopter/Sprites/Travis:rotation")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("../Sounds/Break:playing")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("../Sounds/Fly:playing")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+
+[sub_resource type="Animation" id="Animation_ke2vu"]
+resource_name = "action"
+length = 3.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Helicopter/Sprites/Door:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.5),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(-62, 140), Vector2(-3.41814, 113.871), Vector2(-1000, 700)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Helicopter/Sprites/Door:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.0, -12.5664]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Helicopter/Sprites/Travis:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 2, 2.1, 3),
+"transitions": PackedFloat32Array(1, 0.840896, 1.51572, 0.15932),
+"update": 0,
+"values": [Vector2(-60, 140), Vector2(-60, 140), Vector2(5.58188, 89.871), Vector2(-959.462, 689.697)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Helicopter/Sprites/Travis:rotation")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 2, 2.1, 3),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [0.0, 0.0, -0.785398, -12.5664]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("../Sounds/Break:playing")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("../Sounds/Fly:playing")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(2.1),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_cbweh"]
+_data = {
+"RESET": SubResource("Animation_f3ghb"),
+"action": SubResource("Animation_ke2vu")
+}
+
+[sub_resource type="Animation" id="Animation_0vaf4"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:visible_ratio")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("../Sounds/Typewriter:playing")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+
+[sub_resource type="Animation" id="Animation_w8fdg"]
+resource_name = "new_animation"
+length = 6.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:visible_ratio")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(2, 3.1, 3.3, 4.7),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [0.0, 0.45, 0.45, 1.0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(5.4, 5.8),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("../Sounds/Typewriter:playing")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 2, 3.1, 3.3, 4.7),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 1,
+"values": [false, true, false, true, false]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_jdnhm"]
+_data = {
+"RESET": SubResource("Animation_0vaf4"),
+"new_animation": SubResource("Animation_w8fdg")
+}
+
+[node name="Intro" type="Node2D"]
+script = ExtResource("1_ptqdd")
+
+[node name="Bg" type="ColorRect" parent="."]
+offset_right = 1152.0
+offset_bottom = 648.0
+color = Color(0.274449, 0.41261, 0.656237, 1)
+
+[node name="Clouds" type="Node2D" parent="."]
+
+[node name="Sprite" type="Sprite2D" parent="Clouds"]
+position = Vector2(288, 227)
+scale = Vector2(2, 2)
+texture = ExtResource("1_ddg1r")
+
+[node name="Sprite5" type="Sprite2D" parent="Clouds"]
+position = Vector2(734, 584)
+scale = Vector2(2, 2)
+texture = ExtResource("1_ddg1r")
+
+[node name="Sprite3" type="Sprite2D" parent="Clouds"]
+position = Vector2(59, 430)
+scale = Vector2(2, 2)
+texture = ExtResource("1_ddg1r")
+
+[node name="Sprite2" type="Sprite2D" parent="Clouds"]
+position = Vector2(920, 398)
+scale = Vector2(1.78488, 2.51351)
+texture = ExtResource("1_ddg1r")
+
+[node name="Sprite4" type="Sprite2D" parent="Clouds"]
+position = Vector2(1313, 89)
+scale = Vector2(1.64826, 3.33784)
+texture = ExtResource("1_ddg1r")
+
+[node name="Sprite19" type="Sprite2D" parent="Clouds"]
+position = Vector2(2967, 131)
+scale = Vector2(1.64826, 3.33784)
+texture = ExtResource("1_ddg1r")
+
+[node name="Sprite6" type="Sprite2D" parent="Clouds"]
+position = Vector2(1495, 478)
+scale = Vector2(1.3125, 1.39865)
+texture = ExtResource("1_ddg1r")
+
+[node name="Sprite9" type="Sprite2D" parent="Clouds"]
+position = Vector2(1897.06, 571.063)
+scale = Vector2(1.06904, 2.64527)
+texture = ExtResource("1_ddg1r")
+
+[node name="Sprite17" type="Sprite2D" parent="Clouds"]
+position = Vector2(2865, 462)
+scale = Vector2(1.06904, 2.64527)
+texture = ExtResource("1_ddg1r")
+
+[node name="Sprite12" type="Sprite2D" parent="Clouds"]
+position = Vector2(2259, 247)
+scale = Vector2(0.499636, 1.10642)
+texture = ExtResource("1_ddg1r")
+
+[node name="Sprite18" type="Sprite2D" parent="Clouds"]
+position = Vector2(3360, 478)
+scale = Vector2(0.499636, 1.10642)
+texture = ExtResource("1_ddg1r")
+
+[node name="Sprite13" type="Sprite2D" parent="Clouds"]
+position = Vector2(5403, 442)
+scale = Vector2(1.494, 4.01267)
+texture = ExtResource("1_ddg1r")
+
+[node name="Sprite14" type="Sprite2D" parent="Clouds"]
+position = Vector2(4283, 584)
+scale = Vector2(1.494, 4.01267)
+texture = ExtResource("1_ddg1r")
+
+[node name="Sprite21" type="Sprite2D" parent="Clouds"]
+position = Vector2(4995, 567)
+scale = Vector2(1.06576, 1.99741)
+texture = ExtResource("1_ddg1r")
+
+[node name="Sprite20" type="Sprite2D" parent="Clouds"]
+position = Vector2(3855, 473)
+scale = Vector2(1.494, 4.01267)
+texture = ExtResource("1_ddg1r")
+
+[node name="Sprite15" type="Sprite2D" parent="Clouds"]
+position = Vector2(3278.26, 360.383)
+scale = Vector2(1.43886, 2.68201)
+texture = ExtResource("1_ddg1r")
+
+[node name="Sprite11" type="Sprite2D" parent="Clouds"]
+position = Vector2(2085.53, 360.531)
+scale = Vector2(1.3194, 1.70101)
+texture = ExtResource("1_ddg1r")
+
+[node name="Sprite16" type="Sprite2D" parent="Clouds"]
+position = Vector2(3341, 185)
+scale = Vector2(1.3194, 1.70101)
+texture = ExtResource("1_ddg1r")
+
+[node name="Sprite10" type="Sprite2D" parent="Clouds"]
+position = Vector2(1990, 136)
+scale = Vector2(1.06904, 0.673988)
+texture = ExtResource("1_ddg1r")
+
+[node name="Sprite8" type="Sprite2D" parent="Clouds"]
+position = Vector2(1603, 269)
+scale = Vector2(1.42987, 1.34966)
+texture = ExtResource("1_ddg1r")
+
+[node name="Sprite7" type="Sprite2D" parent="Clouds"]
+position = Vector2(793, 147)
+scale = Vector2(0.42878, 1.12838)
+texture = ExtResource("1_ddg1r")
+
+[node name="Slug" type="Sprite2D" parent="Clouds"]
+position = Vector2(6205, 355)
+scale = Vector2(3.09459, 2.71667)
+texture = ExtResource("3_sw551")
+
+[node name="HelicopterPivot" type="Node2D" parent="."]
+position = Vector2(-589, 196)
+metadata/_edit_group_ = true
+
+[node name="Helicopter" type="Node2D" parent="HelicopterPivot"]
+position = Vector2(0, 111)
+metadata/_edit_group_ = true
+
+[node name="Sprites" type="Node2D" parent="HelicopterPivot/Helicopter"]
+position = Vector2(0.418139, -110.871)
+
+[node name="Base" type="Sprite2D" parent="HelicopterPivot/Helicopter/Sprites"]
+position = Vector2(-59, 117)
+scale = Vector2(2, 2)
+texture = ExtResource("1_52tin")
+
+[node name="Travis" type="Sprite2D" parent="HelicopterPivot/Helicopter/Sprites"]
+position = Vector2(-60, 140)
+scale = Vector2(2, 2)
+texture = ExtResource("2_k3mgm")
+hframes = 4
+
+[node name="Door" type="Sprite2D" parent="HelicopterPivot/Helicopter/Sprites"]
+position = Vector2(-62, 140)
+scale = Vector2(2, 2)
+texture = ExtResource("3_l6kfg")
+
+[node name="Prop" type="Sprite2D" parent="HelicopterPivot/Helicopter/Sprites"]
+position = Vector2(-1.30821, 7.87709)
+scale = Vector2(2, 2)
+texture = ExtResource("6_x7ey2")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="HelicopterPivot/Helicopter/Sprites/Prop"]
+root_node = NodePath("../../../../..")
+libraries = {
+"": SubResource("AnimationLibrary_frex0")
+}
+autoplay = "spin"
+
+[node name="IdleAnim" type="AnimationPlayer" parent="HelicopterPivot/Helicopter"]
+libraries = {
+"": SubResource("AnimationLibrary_s5ynw")
+}
+autoplay = "idle"
+
+[node name="ActionAnim" type="AnimationPlayer" parent="HelicopterPivot/Helicopter"]
+root_node = NodePath("../..")
+libraries = {
+"": SubResource("AnimationLibrary_cbweh")
+}
+
+[node name="Text" type="Label" parent="."]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_top = 276.0
+offset_right = 1152.0
+offset_bottom = 683.0
+grow_horizontal = 2
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 10
+theme_override_fonts/font = ExtResource("9_joi4m")
+theme_override_font_sizes/font_size = 36
+text = "Clapton Island
+12,000m in the air"
+horizontal_alignment = 1
+visible_characters = 0
+visible_ratio = 0.0
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Text"]
+libraries = {
+"": SubResource("AnimationLibrary_jdnhm")
+}
+autoplay = "new_animation"
+
+[node name="Sounds" type="Node" parent="."]
+
+[node name="Helicopter" type="AudioStreamPlayer" parent="Sounds"]
+stream = ExtResource("7_qxwp2")
+volume_db = -40.0
+autoplay = true
+
+[node name="Break" type="AudioStreamPlayer" parent="Sounds"]
+stream = ExtResource("7_k8ha8")
+volume_db = -10.0
+
+[node name="Fly" type="AudioStreamPlayer" parent="Sounds"]
+stream = ExtResource("8_sltjp")
+volume_db = -15.0
+pitch_scale = 1.1
+
+[node name="Typewriter" type="AudioStreamPlayer" parent="Sounds"]
+stream = ExtResource("11_kjf7f")
+
+[node name="Jump" type="AudioStreamPlayer" parent="Sounds"]
+stream = ExtResource("12_vvsaa")
+volume_db = -5.0

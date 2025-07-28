@@ -1,0 +1,26 @@
+[
+	{
+		"Portrait": 1, "Character": "cashier", "Expression": "neutral", "Setup": [0,"travis"],
+		"Text": "Need help finding something, luv?"
+	},
+	{
+		"Portrait": 0, "Character": "travis", "Expression": "neutral",
+		"Text": "Uh, I was actually just carrying out an investigation on this island into cult activity. Any leads?"
+	},
+	{
+		"Portrait": 1, "Character": "cashier", "Expression": "smug",
+		"Text": "Cult activity? In Clapton? Is this what our government spending is coming to?"
+	},
+	{
+		"Portrait": 1, "Character": "cashier", "Expression": "smug",
+		"Text": "We could hardly organize a [___], let alone a bloody cult!"
+	},
+	{
+		"Portrait": 1, "Character": "cashier", "Expression": "neutral",
+		"Text": "You'd be better off taking a look at the monster infestation in that crevice outside our store, folks are utterly stranded on either side!"
+	},
+	{
+		"Portrait": 1, "Character": "cashier", "Expression": "shifty",
+		"Text": "Terrible for business, I must say..."
+	}
+]

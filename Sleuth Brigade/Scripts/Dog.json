@@ -1,0 +1,10 @@
+[
+	{
+		"Portrait": 1, "Character": "dog", "Expression": "neutral", "Setup": [0,"travis"],
+		"Text": "Bark bark woof woof"
+	},
+	{
+		"Portrait": 1, "Character": "dog", "Expression": "neutral",
+		"Text": "(Please... please kill me...)"
+	}
+]

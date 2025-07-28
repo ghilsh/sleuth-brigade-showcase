@@ -1,0 +1,256 @@
+[gd_scene load_steps=16 format=3 uid="uid://xtkxbu8bj7iq"]
+
+[ext_resource type="Script" path="res://Entities/Enemies/Meatball/Meatball.gd" id="1_sjjra"]
+[ext_resource type="Texture2D" uid="uid://cvmedcd7er7hl" path="res://Assets/Images/meatball.png" id="2_0dii5"]
+[ext_resource type="AudioStream" uid="uid://b4dsm60fugpmu" path="res://Assets/Audio/Sounds/snd_rocksmash.ogg" id="2_63a5s"]
+[ext_resource type="Texture2D" uid="uid://caaubixch2xh2" path="res://Assets/Images/shadow.png" id="2_wbx0o"]
+[ext_resource type="AudioStream" uid="uid://32d8fmowvh7l" path="res://Assets/Audio/Sounds/snd_miss.ogg" id="3_2jgk6"]
+[ext_resource type="PackedScene" uid="uid://dsyq63tfmeas7" path="res://Entities/Enemies/EnemyDebugText.tscn" id="4_ppw3w"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_w7bkn"]
+size = Vector2(34, 10)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_5u8tr"]
+size = Vector2(96, 125)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_xsaem"]
+size = Vector2(32, 8)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_xkckh"]
+size = Vector2(32, 10)
+
+[sub_resource type="Animation" id="Animation_t4fbi"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, -79)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprite:scale")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(2, 2)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Sprite:frame")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Sprite:modulate")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_uwq24"]
+resource_name = "change_state"
+length = 0.3
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3),
+"transitions": PackedFloat32Array(1, 2.73208, 1, 1),
+"update": 0,
+"values": [Vector2(0, -79), Vector2(-2.38419e-07, -73.5), Vector2(0.500005, -84), Vector2(0, -79)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprite:scale")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3),
+"transitions": PackedFloat32Array(1, 2.73208, 1, 1),
+"update": 0,
+"values": [Vector2(2, 2), Vector2(2.11594, 1.86076), Vector2(1.92754, 2.12658), Vector2(2, 2)]
+}
+
+[sub_resource type="Animation" id="Animation_vbra2"]
+resource_name = "searching"
+length = 0.6
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.3),
+"transitions": PackedFloat32Array(1, 0.5),
+"update": 0,
+"values": [Vector2(0, -79), Vector2(2.75373e-05, -71.75)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprite:scale")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.3),
+"transitions": PackedFloat32Array(1, 0.5),
+"update": 0,
+"values": [Vector2(2, 2), Vector2(2.22222, 1.81013)]
+}
+
+[sub_resource type="Animation" id="Animation_y7usm"]
+resource_name = "success"
+length = 3.2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.4, 0.6, 0.8, 1, 1.2, 1.4, 1.5, 1.6, 1.9, 2, 2.2, 2.4, 2.6, 2.8, 3, 3.2),
+"transitions": PackedFloat32Array(1, 2.5, 1, 2.5, 1, 2.5, 1, 1, 0.594604, 1, 1, 1, 2.5, 1, 2.5, 1, 2.5, 1),
+"update": 0,
+"values": [Vector2(0, -79), Vector2(0, -69), Vector2(0, -79), Vector2(0, -69), Vector2(0, -79), Vector2(0, -69), Vector2(0, -79), Vector2(0, -79), Vector2(0, -69.5), Vector2(0, -79), Vector2(0, -79), Vector2(0, -79), Vector2(0, -69.5), Vector2(0, -79), Vector2(0, -69), Vector2(0, -79), Vector2(0, -69), Vector2(0, -79)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprite:scale")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.4, 0.6, 0.8, 1, 1.2, 1.4, 1.5, 1.6, 1.9, 2, 2.2, 2.4, 2.6, 2.8, 3, 3.2),
+"transitions": PackedFloat32Array(1, 2.5, 1, 2.5, 1, 2.5, 1, 1, 0.594604, 1, 1, 1, 2.5, 1, 2.5, 1, 2.5, 1),
+"update": 0,
+"values": [Vector2(2, 2), Vector2(2.21111, 1.74684), Vector2(2, 2), Vector2(2.21111, 1.74684), Vector2(2, 2), Vector2(2.21111, 1.74684), Vector2(2, 2), Vector2(2, 2), Vector2(2.07778, 1.74684), Vector2(2, 2), Vector2(2, 2), Vector2(2, 2), Vector2(2.21111, 1.74684), Vector2(2, 2), Vector2(2.21111, 1.74684), Vector2(2, 2), Vector2(2.21111, 1.74684), Vector2(2, 2)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Sprite:frame")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 1.5, 2.1),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [1, 2, 5]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_866gr"]
+_data = {
+"RESET": SubResource("Animation_t4fbi"),
+"change_state": SubResource("Animation_uwq24"),
+"searching": SubResource("Animation_vbra2"),
+"success": SubResource("Animation_y7usm")
+}
+
+[node name="Meatball" type="CharacterBody2D"]
+script = ExtResource("1_sjjra")
+
+[node name="Audio" type="Node2D" parent="."]
+
+[node name="Smash" type="AudioStreamPlayer2D" parent="Audio"]
+stream = ExtResource("2_63a5s")
+bus = &"sfx"
+
+[node name="Swoosh" type="AudioStreamPlayer2D" parent="Audio"]
+stream = ExtResource("3_2jgk6")
+volume_db = -10.0
+pitch_scale = 0.7
+bus = &"sfx"
+
+[node name="Shadow" type="Sprite2D" parent="."]
+modulate = Color(1, 1, 1, 0.392157)
+position = Vector2(7.62939e-06, -6)
+scale = Vector2(3.92593, 2)
+texture = ExtResource("2_wbx0o")
+
+[node name="Sprite" type="Sprite2D" parent="."]
+position = Vector2(0, -79)
+scale = Vector2(2, 2)
+texture = ExtResource("2_0dii5")
+hframes = 6
+
+[node name="TileDetector" type="Area2D" parent="."]
+visible = false
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="TileDetector"]
+position = Vector2(0, -4)
+shape = SubResource("RectangleShape2D_w7bkn")
+debug_color = Color(0.592438, 0.37465, 1, 0.42)
+
+[node name="HurtBox" type="Area2D" parent="."]
+visible = false
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="HurtBox"]
+position = Vector2(0, -17.5)
+shape = SubResource("RectangleShape2D_5u8tr")
+debug_color = Color(0.98275, 6.08854e-06, 1.54018e-06, 0.419608)
+
+[node name="Hitbox" type="CollisionShape2D" parent="."]
+position = Vector2(0, -4)
+shape = SubResource("RectangleShape2D_xsaem")
+
+[node name="RayCast2D" type="RayCast2D" parent="."]
+visible = false
+position = Vector2(0, -4)
+target_position = Vector2(450, 0)
+collision_mask = 4
+
+[node name="RayCastLonger" type="RayCast2D" parent="."]
+visible = false
+position = Vector2(0, -4)
+target_position = Vector2(999, 0)
+collision_mask = 4
+
+[node name="ShapeCast2D" type="ShapeCast2D" parent="."]
+position = Vector2(0, -4)
+shape = SubResource("RectangleShape2D_xkckh")
+target_position = Vector2(0, 0)
+max_results = 1
+collision_mask = 4
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_866gr")
+}
+
+[node name="OnScreen" type="VisibleOnScreenNotifier2D" parent="."]
+position = Vector2(0, -9)
+scale = Vector2(2.6, 0.9)
+
+[node name="EnemyDebugText" parent="." instance=ExtResource("4_ppw3w")]
+visible = false
+offset_top = -136.0
+offset_bottom = -48.0

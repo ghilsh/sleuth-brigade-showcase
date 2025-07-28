@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://8ceiu7p8jh8o"
+path="res://.godot/imported/hunter sounds.ogg-e687cd7f874086c2cf746ca96061b31b.oggvorbisstr"
+
+[deps]
+
+source_file="res://Assets/Audio/Sounds/Voiceblips/hunter sounds.ogg"
+dest_files=["res://.godot/imported/hunter sounds.ogg-e687cd7f874086c2cf746ca96061b31b.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

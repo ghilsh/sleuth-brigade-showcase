@@ -1,0 +1,115 @@
+[gd_scene load_steps=9 format=3 uid="uid://c21tbyia6b5rr"]
+
+[ext_resource type="Texture2D" uid="uid://kcct0jrhcmo4" path="res://Assets/Images/bird.png" id="1_71gvp"]
+[ext_resource type="Script" path="res://Entities/Animals/Bird/Bird.gd" id="1_i6bjs"]
+[ext_resource type="AudioStream" uid="uid://6vspcttq3moh" path="res://Assets/Audio/Sounds/snd_flapping.ogg" id="3_1hbk7"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_be5jb"]
+size = Vector2(10, 4)
+
+[sub_resource type="Animation" id="Animation_riu47"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprite:flip_h")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+
+[sub_resource type="Animation" id="Animation_3ohqi"]
+resource_name = "fly"
+length = 0.4
+loop_mode = 1
+step = 0.05
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [1, 0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprite:flip_h")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_y0ynf"]
+_data = {
+"RESET": SubResource("Animation_riu47"),
+"fly": SubResource("Animation_3ohqi")
+}
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_28odl"]
+radius = 182.069
+
+[node name="Bird" type="CharacterBody2D"]
+script = ExtResource("1_i6bjs")
+
+[node name="Shadow" type="ColorRect" parent="."]
+offset_left = -13.0
+offset_top = -3.0
+offset_right = 13.0
+offset_bottom = 3.0
+color = Color(0, 0, 0, 0.388235)
+
+[node name="Sprite" type="Sprite2D" parent="."]
+position = Vector2(4.76837e-07, -20)
+scale = Vector2(2, 2)
+texture = ExtResource("1_71gvp")
+hframes = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_be5jb")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_y0ynf")
+}
+
+[node name="Range" type="Area2D" parent="."]
+visible = false
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Range"]
+shape = SubResource("CircleShape2D_28odl")
+
+[node name="TomarTakingWing" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("3_1hbk7")
+max_distance = 750.0
+bus = &"sfx"
+
+[node name="Timer" type="Timer" parent="."]
+
+[node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="."]
+position = Vector2(0, -3.5)
+scale = Vector2(1, 0.65)

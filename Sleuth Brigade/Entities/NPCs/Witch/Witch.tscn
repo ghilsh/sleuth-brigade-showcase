@@ -1,0 +1,11 @@
+[gd_scene load_steps=3 format=3 uid="uid://w5xlx1f33cve"]
+
+[ext_resource type="PackedScene" uid="uid://duxvg4yh4tj66" path="res://Entities/NPCs/npc.tscn" id="1_ovhlg"]
+[ext_resource type="Texture2D" uid="uid://dtmpxvv7m5ql4" path="res://Assets/Images/witch.png" id="2_jp2tr"]
+
+[node name="Witch" instance=ExtResource("1_ovhlg")]
+
+[node name="Sprite" parent="." index="1"]
+position = Vector2(0, -64)
+texture = ExtResource("2_jp2tr")
+hframes = 2

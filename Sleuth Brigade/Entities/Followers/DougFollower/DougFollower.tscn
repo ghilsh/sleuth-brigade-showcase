@@ -1,0 +1,11 @@
+[gd_scene load_steps=3 format=3 uid="uid://xmakypedev0g"]
+
+[ext_resource type="PackedScene" uid="uid://clgyitxmuv562" path="res://Entities/Followers/Follower.tscn" id="1_iygsg"]
+[ext_resource type="Texture2D" uid="uid://dvjn1pmia4bnu" path="res://Assets/Images/doug.png" id="2_a7gdo"]
+
+[node name="Follower" instance=ExtResource("1_iygsg")]
+
+[node name="Sprite" parent="." index="2"]
+position = Vector2(0, -57)
+texture = ExtResource("2_a7gdo")
+hframes = 5

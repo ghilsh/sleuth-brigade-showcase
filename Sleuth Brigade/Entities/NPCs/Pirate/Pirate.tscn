@@ -1,0 +1,11 @@
+[gd_scene load_steps=3 format=3 uid="uid://dh50e74ht0ocm"]
+
+[ext_resource type="PackedScene" uid="uid://duxvg4yh4tj66" path="res://Entities/NPCs/npc.tscn" id="1_1rr52"]
+[ext_resource type="Texture2D" uid="uid://2ilq0m0xbi8b" path="res://Assets/Images/pirate.png" id="2_n4fyc"]
+
+[node name="Pirate" instance=ExtResource("1_1rr52")]
+dialog = &"Pirate"
+
+[node name="Sprite" parent="." index="1"]
+position = Vector2(0, -61)
+texture = ExtResource("2_n4fyc")

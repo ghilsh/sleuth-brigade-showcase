@@ -1,0 +1,148 @@
+[gd_scene load_steps=9 format=3 uid="uid://cvdimdvba2cwg"]
+
+[ext_resource type="Script" path="res://UI/Pause/Pause.gd" id="1_orkt5"]
+[ext_resource type="FontFile" uid="uid://6c8b2kkn2x1q" path="res://Assets/Fonts/PixeloidSans-nR3g1.ttf" id="1_pgv24"]
+[ext_resource type="Theme" uid="uid://dn5d38v6n5gsg" path="res://UI/button.tres" id="3_w6s6q"]
+[ext_resource type="PackedScene" uid="uid://df861b84txmwp" path="res://UI/Options/Options.tscn" id="4_y78u5"]
+[ext_resource type="Texture2D" uid="uid://dh72d1uxtxwj4" path="res://Assets/Images/paused.png" id="5_vfk3a"]
+
+[sub_resource type="Animation" id="Animation_phdf2"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("HeaderSprite:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(600, 243)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("HeaderSprite:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+
+[sub_resource type="Animation" id="Animation_dxade"]
+resource_name = "bounce"
+length = 2.0
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("HeaderSprite:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(2, 2),
+"update": 0,
+"values": [Vector2(600, 243), Vector2(600, 255)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = false
+tracks/1/path = NodePath("HeaderSprite:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(0.5, 2),
+"update": 0,
+"values": [0.0, 0.00872665]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_hv8br"]
+_data = {
+"RESET": SubResource("Animation_phdf2"),
+"bounce": SubResource("Animation_dxade")
+}
+
+[node name="Pause" type="CanvasLayer"]
+process_mode = 3
+layer = 2
+script = ExtResource("1_orkt5")
+
+[node name="Background" type="ColorRect" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0.694118)
+
+[node name="Header" type="Label" parent="."]
+visible = false
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -288.0
+offset_top = 152.0
+offset_right = 288.0
+offset_bottom = 328.0
+grow_horizontal = 2
+theme_override_fonts/font = ExtResource("1_pgv24")
+theme_override_font_sizes/font_size = 144
+text = "PAUSED"
+
+[node name="HeaderSprite" type="Sprite2D" parent="."]
+position = Vector2(600, 243)
+scale = Vector2(5.95957, 5.95957)
+texture = ExtResource("5_vfk3a")
+
+[node name="Buttons" type="VBoxContainer" parent="."]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -128.0
+offset_top = 20.0
+offset_right = 132.0
+offset_bottom = 160.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+theme = ExtResource("3_w6s6q")
+
+[node name="Resume" type="Button" parent="Buttons"]
+layout_mode = 2
+size_flags_horizontal = 4
+focus_neighbor_top = NodePath("../Menu")
+mouse_filter = 2
+text = "Resume"
+
+[node name="Options" type="Button" parent="Buttons"]
+layout_mode = 2
+size_flags_horizontal = 4
+mouse_filter = 2
+text = "Options"
+
+[node name="Menu" type="Button" parent="Buttons"]
+layout_mode = 2
+size_flags_horizontal = 0
+focus_neighbor_bottom = NodePath("../Resume")
+mouse_filter = 2
+text = "Back to Menu"
+
+[node name="Options" parent="." instance=ExtResource("4_y78u5")]
+modulate = Color(1, 1, 1, 0)
+offset_left = 352.0
+offset_top = 320.0
+offset_right = 788.0
+offset_bottom = 604.0
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_hv8br")
+}

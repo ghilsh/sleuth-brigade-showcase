@@ -1,0 +1,148 @@
+[gd_scene load_steps=15 format=3 uid="uid://ckh7s6h1xihug"]
+
+[ext_resource type="Script" path="res://Entities/Enemies/Annoyer/Annoyer.gd" id="1_5t0nu"]
+[ext_resource type="Texture2D" uid="uid://caaubixch2xh2" path="res://Assets/Images/shadow.png" id="1_jey2i"]
+[ext_resource type="Texture2D" uid="uid://d12ukjxe4ud7o" path="res://Assets/Images/annoyer.png" id="3_nxl7g"]
+[ext_resource type="PackedScene" uid="uid://dsyq63tfmeas7" path="res://Entities/Enemies/EnemyDebugText.tscn" id="4_gfdvv"]
+[ext_resource type="AudioStream" uid="uid://06i3e8iqyx15" path="res://Assets/Audio/Sounds/snd_annoyer_annoy.ogg" id="5_gk1cv"]
+[ext_resource type="AudioStream" uid="uid://bf6lwp0tdvm5j" path="res://Assets/Audio/Sounds/snd_annoyer_hurt.ogg" id="6_2oghd"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_efadk"]
+size = Vector2(30, 12)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_bwe02"]
+size = Vector2(82, 98)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_gkqe6"]
+radius = 115.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_fa5yq"]
+radius = 576.056
+
+[sub_resource type="Animation" id="Animation_f1loc"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprite:flip_h")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+
+[sub_resource type="Animation" id="Animation_hsfd6"]
+resource_name = "annoy"
+length = 0.2
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [4, 3]
+}
+
+[sub_resource type="Animation" id="Animation_m67bu"]
+resource_name = "change_state"
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_rsh05"]
+_data = {
+"RESET": SubResource("Animation_f1loc"),
+"annoy": SubResource("Animation_hsfd6"),
+"change_state": SubResource("Animation_m67bu")
+}
+
+[node name="Annoyer" type="CharacterBody2D"]
+script = ExtResource("1_5t0nu")
+
+[node name="Shadow" type="Sprite2D" parent="."]
+modulate = Color(1, 1, 1, 0.392157)
+position = Vector2(-1.5, -4)
+scale = Vector2(2.11111, 1.33333)
+texture = ExtResource("1_jey2i")
+
+[node name="Sprite" type="Sprite2D" parent="."]
+position = Vector2(0, -73)
+scale = Vector2(2, 2)
+texture = ExtResource("3_nxl7g")
+hframes = 7
+
+[node name="Hitbox" type="CollisionShape2D" parent="."]
+position = Vector2(0, -6)
+shape = SubResource("RectangleShape2D_efadk")
+
+[node name="HurtBox" type="Area2D" parent="."]
+visible = false
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="HurtBox"]
+position = Vector2(0, -49)
+shape = SubResource("RectangleShape2D_bwe02")
+debug_color = Color(0.98275, 6.08854e-06, 1.54018e-06, 0.419608)
+
+[node name="AnnoyRange" type="Area2D" parent="."]
+visible = false
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="AnnoyRange"]
+shape = SubResource("CircleShape2D_gkqe6")
+
+[node name="HearingRange" type="Area2D" parent="."]
+visible = false
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="HearingRange"]
+shape = SubResource("CircleShape2D_fa5yq")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_rsh05")
+}
+
+[node name="OnScreen" type="VisibleOnScreenNotifier2D" parent="."]
+visible = false
+position = Vector2(9, -72)
+scale = Vector2(1.9, 5)
+
+[node name="RayCast2D" type="RayCast2D" parent="."]
+visible = false
+target_position = Vector2(350, 0)
+
+[node name="RayCastLonger" type="RayCast2D" parent="."]
+visible = false
+target_position = Vector2(999, 0)
+
+[node name="RichTextLabel" parent="." instance=ExtResource("4_gfdvv")]
+visible = false
+offset_left = -87.0
+offset_top = -153.0
+offset_right = 89.0
+offset_bottom = -65.0
+
+[node name="Sounds" type="Node2D" parent="."]
+
+[node name="Annoy" type="AudioStreamPlayer2D" parent="Sounds"]
+stream = ExtResource("5_gk1cv")
+bus = &"sfx"
+
+[node name="Hurt" type="AudioStreamPlayer2D" parent="Sounds"]
+stream = ExtResource("6_2oghd")
+bus = &"sfx"

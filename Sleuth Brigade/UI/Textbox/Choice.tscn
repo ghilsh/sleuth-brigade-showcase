@@ -1,0 +1,50 @@
+[gd_scene load_steps=11 format=3 uid="uid://cqup55e5xcben"]
+
+[ext_resource type="FontFile" uid="uid://6c8b2kkn2x1q" path="res://Assets/Fonts/PixeloidSans-nR3g1.ttf" id="1_k13o3"]
+[ext_resource type="Texture2D" uid="uid://y1wddysamxk7" path="res://Assets/Images/textbox.png" id="1_u7mh4"]
+[ext_resource type="Script" path="res://UI/Textbox/Choice.gd" id="2_o1gmx"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_wbaq2"]
+
+[sub_resource type="Theme" id="Theme_uvrwo"]
+default_font = ExtResource("1_k13o3")
+/styles/button = SubResource("StyleBoxEmpty_wbaq2")
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_drv7p"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_l0cj1"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_o7gog"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_0f0xq"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_ymx8b"]
+
+[node name="Choice" type="Button"]
+offset_top = -32.0
+offset_right = 168.0
+offset_bottom = 31.0
+mouse_filter = 2
+theme = SubResource("Theme_uvrwo")
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_focus_color = Color(1, 1, 0.588235, 1)
+theme_override_font_sizes/font_size = 36
+theme_override_styles/normal = SubResource("StyleBoxEmpty_drv7p")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_l0cj1")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_o7gog")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_0f0xq")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_ymx8b")
+script = ExtResource("2_o1gmx")
+
+[node name="NinePatchRect2" type="NinePatchRect" parent="."]
+z_index = -1
+layout_mode = 0
+offset_left = -16.0
+offset_right = 92.0
+offset_bottom = 16.0
+scale = Vector2(4, 4)
+texture = ExtResource("1_u7mh4")
+patch_margin_left = 4
+patch_margin_top = 4
+patch_margin_right = 4
+patch_margin_bottom = 4

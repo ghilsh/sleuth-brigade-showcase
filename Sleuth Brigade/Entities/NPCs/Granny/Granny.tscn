@@ -1,0 +1,10 @@
+[gd_scene load_steps=3 format=3 uid="uid://b5vn4sbf1c1ss"]
+
+[ext_resource type="PackedScene" uid="uid://duxvg4yh4tj66" path="res://Entities/NPCs/npc.tscn" id="1_kbpdy"]
+[ext_resource type="Texture2D" uid="uid://datclws0588wb" path="res://Assets/Images/granny.png" id="2_f6bpf"]
+
+[node name="Granny" instance=ExtResource("1_kbpdy")]
+
+[node name="Sprite" parent="." index="1"]
+position = Vector2(0, -65)
+texture = ExtResource("2_f6bpf")

@@ -1,0 +1,113 @@
+[gd_scene load_steps=10 format=3 uid="uid://1l0tnvtlsbyc"]
+
+[ext_resource type="PackedScene" uid="uid://b8r4dv11lujep" path="res://Entities/Player/ItemSlot.tscn" id="1_gx2p7"]
+[ext_resource type="Script" path="res://Entities/Player/Overlay.gd" id="1_h7qpd"]
+[ext_resource type="Texture2D" uid="uid://q7us8q7eslgq" path="res://Assets/Images/heart_hurt.png" id="3_2inc4"]
+[ext_resource type="AudioStream" uid="uid://hvvrokmyrv12" path="res://Assets/Audio/Sounds/snd_place.ogg" id="3_b3x56"]
+[ext_resource type="AudioStream" uid="uid://cionkaf8rfgpp" path="res://Assets/Audio/Sounds/snd_heartbeat.ogg" id="4_vlp7r"]
+[ext_resource type="Texture2D" uid="uid://c7lhwkcsarjfo" path="res://Assets/Images/clock.png" id="5_abjwr"]
+[ext_resource type="FontFile" uid="uid://6c8b2kkn2x1q" path="res://Assets/Fonts/PixeloidSans-nR3g1.ttf" id="6_6ocmy"]
+[ext_resource type="Texture2D" uid="uid://c5lf7tywcmx6p" path="res://Assets/Images/heart.png" id="7_53f8n"]
+[ext_resource type="Texture2D" uid="uid://b6u6jv5jmdh1v" path="res://Assets/Images/Archive/slug.png" id="9_26uaj"]
+
+[node name="Overlay" type="CanvasLayer"]
+script = ExtResource("1_h7qpd")
+
+[node name="Black" type="ColorRect" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0)
+
+[node name="ItemSlots" type="HBoxContainer" parent="."]
+offset_right = 40.0
+offset_bottom = 40.0
+metadata/_edit_group_ = true
+
+[node name="1" parent="ItemSlots" instance=ExtResource("1_gx2p7")]
+position = Vector2(896, 40)
+
+[node name="2" parent="ItemSlots" instance=ExtResource("1_gx2p7")]
+position = Vector2(968, 40)
+slot = 1
+
+[node name="3" parent="ItemSlots" instance=ExtResource("1_gx2p7")]
+position = Vector2(1040, 40)
+slot = 2
+
+[node name="4" parent="ItemSlots" instance=ExtResource("1_gx2p7")]
+position = Vector2(1112, 40)
+slot = 3
+
+[node name="Health" type="Node2D" parent="."]
+position = Vector2(0, -64)
+metadata/_edit_group_ = true
+
+[node name="Hurt" type="TextureRect" parent="Health"]
+offset_left = 8.0
+offset_top = 6.0
+offset_right = 128.0
+offset_bottom = 35.0
+scale = Vector2(2, 2)
+texture = ExtResource("3_2inc4")
+stretch_mode = 1
+
+[node name="Hearts" type="TextureRect" parent="Health"]
+offset_left = 8.0
+offset_top = 6.0
+offset_right = 128.0
+offset_bottom = 35.0
+scale = Vector2(2, 2)
+texture = ExtResource("7_53f8n")
+stretch_mode = 1
+
+[node name="Timer" type="Node2D" parent="."]
+visible = false
+
+[node name="Clock" type="Sprite2D" parent="Timer"]
+position = Vector2(32, 36)
+scale = Vector2(2, 2)
+texture = ExtResource("5_abjwr")
+
+[node name="Text" type="Label" parent="Timer"]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = 64.0
+offset_top = 20.0
+offset_right = 624.0
+offset_bottom = 64.0
+grow_horizontal = 2
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 10
+theme_override_fonts/font = ExtResource("6_6ocmy")
+theme_override_font_sizes/font_size = 36
+text = "00:00:00.000"
+
+[node name="Place" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_b3x56")
+volume_db = -12.0
+
+[node name="Pickup" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_b3x56")
+volume_db = -12.0
+pitch_scale = 1.2
+
+[node name="Heartbeat" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("4_vlp7r")
+pitch_scale = 1.2
+
+[node name="Slug" type="Sprite2D" parent="."]
+position = Vector2(1534.25, 494)
+scale = Vector2(15.2838, 6.06667)
+texture = ExtResource("9_26uaj")
+
+[node name="FPS" type="Label" parent="."]
+visible = false
+offset_left = 8.0
+offset_top = 616.0
+offset_right = 144.0
+offset_bottom = 640.0
+text = "FPS"

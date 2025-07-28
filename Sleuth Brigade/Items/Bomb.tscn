@@ -1,0 +1,122 @@
+[gd_scene load_steps=13 format=3 uid="uid://bm6nk0gci5a23"]
+
+[ext_resource type="PackedScene" uid="uid://d13b6s5j61dkb" path="res://Items/Item.tscn" id="1_ftn1w"]
+[ext_resource type="Texture2D" uid="uid://caaubixch2xh2" path="res://Assets/Images/shadow.png" id="2_3v55c"]
+[ext_resource type="Script" path="res://Items/Bomb.gd" id="2_bfs4x"]
+[ext_resource type="Texture2D" uid="uid://cpsrrgo3y34oy" path="res://Assets/Images/bomb.png" id="3_afbks"]
+[ext_resource type="AudioStream" uid="uid://b8yqk26bjc2p1" path="res://Assets/Audio/Sounds/snd_explode.ogg" id="6_ktfnv"]
+[ext_resource type="PackedScene" uid="uid://w3jhregyy51m" path="res://Items/Explosion.tscn" id="6_m53kx"]
+[ext_resource type="AudioStream" uid="uid://x4gppc7ujw6m" path="res://Assets/Audio/Sounds/snd_ticking.ogg" id="7_h80e8"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_v2yqc"]
+size = Vector2(24, 6)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_qain3"]
+radius = 22.2036
+
+[sub_resource type="Animation" id="Animation_u8uwa"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, -19)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprite:scale")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(2, 2)]
+}
+
+[sub_resource type="Animation" id="Animation_wbp0d"]
+resource_name = "tick"
+length = 0.4
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2),
+"transitions": PackedFloat32Array(0.392292, 2),
+"update": 0,
+"values": [Vector2(0, -19), Vector2(0, -16)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprite:scale")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.2),
+"transitions": PackedFloat32Array(0.392292, 2),
+"update": 0,
+"values": [Vector2(2, 2), Vector2(2.28571, 1.68421)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_ufng1"]
+_data = {
+"RESET": SubResource("Animation_u8uwa"),
+"tick": SubResource("Animation_wbp0d")
+}
+
+[node name="Bomb" instance=ExtResource("1_ftn1w")]
+script = ExtResource("2_bfs4x")
+
+[node name="CollisionShape2D" parent="." index="0"]
+position = Vector2(0, -3)
+shape = SubResource("RectangleShape2D_v2yqc")
+
+[node name="Shadow" type="Sprite2D" parent="." index="1"]
+modulate = Color(1, 1, 1, 0.392157)
+position = Vector2(1.07288e-06, -2.5)
+scale = Vector2(1.33333, 1)
+texture = ExtResource("2_3v55c")
+
+[node name="Sprite" parent="." index="2"]
+position = Vector2(0, -19)
+texture = ExtResource("3_afbks")
+
+[node name="Explosion" parent="." index="3" instance=ExtResource("6_m53kx")]
+visible = false
+position = Vector2(0, -14)
+
+[node name="Explode" type="AudioStreamPlayer2D" parent="." index="4"]
+stream = ExtResource("6_ktfnv")
+bus = &"sfx"
+
+[node name="Ticking" type="AudioStreamPlayer2D" parent="." index="5"]
+stream = ExtResource("7_h80e8")
+bus = &"sfx"
+
+[node name="Range" parent="." index="6"]
+visible = false
+
+[node name="ActivateRange" type="Area2D" parent="." index="7"]
+visible = false
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ActivateRange" index="0"]
+position = Vector2(0, -15)
+shape = SubResource("CircleShape2D_qain3")
+debug_color = Color(0.948118, 0.229224, 0, 0.42)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." index="8"]
+libraries = {
+"": SubResource("AnimationLibrary_ufng1")
+}

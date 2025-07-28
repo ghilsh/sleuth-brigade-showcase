@@ -1,0 +1,60 @@
+[gd_scene load_steps=10 format=3 uid="uid://dorvs1hyr3hfl"]
+
+[ext_resource type="PackedScene" uid="uid://d13b6s5j61dkb" path="res://Items/Item.tscn" id="1_kqx7h"]
+[ext_resource type="Script" path="res://Items/Barrel.gd" id="2_cenuc"]
+[ext_resource type="Texture2D" uid="uid://cduwppo05f2gf" path="res://Assets/Images/barrel.png" id="2_sm73k"]
+[ext_resource type="Texture2D" uid="uid://caaubixch2xh2" path="res://Assets/Images/shadow.png" id="3_b0bie"]
+[ext_resource type="AudioStream" uid="uid://32d8fmowvh7l" path="res://Assets/Audio/Sounds/snd_miss.ogg" id="5_ji2vp"]
+[ext_resource type="AudioStream" uid="uid://digvxrha3h2u3" path="res://Assets/Audio/Sounds/snd_barrel.ogg" id="6_r74t1"]
+[ext_resource type="AudioStream" uid="uid://da8nf0fpppi0a" path="res://Assets/Audio/Sounds/snd_break.ogg" id="7_p1f7t"]
+[ext_resource type="AudioStream" uid="uid://dpx7vlckej0fx" path="res://Assets/Audio/Sounds/snd_impact.ogg" id="8_djp83"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_isrgr"]
+size = Vector2(30, 8)
+
+[node name="Barrel" instance=ExtResource("1_kqx7h")]
+collision_layer = 13
+collision_mask = 13
+script = ExtResource("2_cenuc")
+
+[node name="CollisionShape2D" parent="." index="0"]
+position = Vector2(0, -5)
+shape = SubResource("RectangleShape2D_isrgr")
+
+[node name="Shadow" type="Sprite2D" parent="." index="1"]
+modulate = Color(1, 1, 1, 0.392157)
+position = Vector2(0, -2.5)
+scale = Vector2(2, 1.44444)
+texture = ExtResource("3_b0bie")
+
+[node name="Sprite" parent="." index="2"]
+position = Vector2(0, -32)
+texture = ExtResource("2_sm73k")
+hframes = 7
+
+[node name="Range" parent="." index="3"]
+visible = false
+
+[node name="Sounds" type="Node2D" parent="." index="4"]
+
+[node name="Start" type="AudioStreamPlayer2D" parent="Sounds" index="0"]
+stream = ExtResource("5_ji2vp")
+volume_db = -10.0
+pitch_scale = 0.7
+bus = &"sfx"
+
+[node name="Roll" type="AudioStreamPlayer2D" parent="Sounds" index="1"]
+stream = ExtResource("6_r74t1")
+volume_db = 2.0
+bus = &"sfx"
+
+[node name="Smash" type="AudioStreamPlayer2D" parent="Sounds" index="2"]
+stream = ExtResource("7_p1f7t")
+volume_db = -7.0
+pitch_scale = 0.7
+bus = &"sfx"
+
+[node name="Impact" type="AudioStreamPlayer2D" parent="Sounds" index="3"]
+stream = ExtResource("8_djp83")
+volume_db = -4.0
+bus = &"sfx"

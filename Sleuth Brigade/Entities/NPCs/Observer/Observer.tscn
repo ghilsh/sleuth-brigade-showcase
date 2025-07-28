@@ -1,0 +1,14 @@
+[gd_scene load_steps=3 format=3 uid="uid://cdsgf1lbvuuta"]
+
+[ext_resource type="PackedScene" uid="uid://duxvg4yh4tj66" path="res://Entities/NPCs/npc.tscn" id="1_mi7v2"]
+[ext_resource type="Texture2D" uid="uid://xq3vy5m6it7n" path="res://Assets/Images/observer.png" id="2_4lnuw"]
+
+[node name="Observer" instance=ExtResource("1_mi7v2")]
+
+[node name="Shadow" parent="." index="0"]
+position = Vector2(-1.66893e-06, -1)
+scale = Vector2(2, 1.77778)
+
+[node name="Sprite" parent="." index="1"]
+position = Vector2(0, -58)
+texture = ExtResource("2_4lnuw")

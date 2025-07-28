@@ -1,0 +1,22 @@
+[
+	{
+		"Portrait": 1, "Character": "coneman", "Expression": "neutral",
+		"Text": "Oh I'm sorry were you trying to go this way"
+	},
+	{
+		"Portrait": 1, "Character": "coneman", "Expression": "neutral",
+		"Text": "Hey man I'm sorry okay I just wanted to put some cones here man I'm sorry"
+	},
+	{
+		"Portrait": 1, "Character": "coneman", "Expression": "neutral",
+		"Text": "I know I'm a burden and I mess everything up all the time but I just wanted to place some cones down man it's all I have left"
+	},
+	{
+		"Portrait": 1, "Character": "coneman", "Expression": "neutral",
+		"Text": "Just go on your way man I'll move them at a later date I promise I'm sorry"
+	},
+	{
+		"Portrait": 0, "Character": "travis", "Expression": "neutral",
+		"Text": "Sounds good."
+	}
+]

@@ -1,0 +1,273 @@
+[gd_scene load_steps=11 format=3 uid="uid://558jyxbbd8qo"]
+
+[ext_resource type="PackedScene" uid="uid://duxvg4yh4tj66" path="res://Entities/NPCs/npc.tscn" id="1_kvrwl"]
+[ext_resource type="Texture2D" uid="uid://recgaa48lcbo" path="res://Assets/Images/biker_red.png" id="2_km0be"]
+[ext_resource type="AudioStream" uid="uid://bsumwk72gkyee" path="res://Assets/Audio/Sounds/Footsteps/snd_footstep_grass.ogg" id="3_kjgn4"]
+[ext_resource type="AudioStream" uid="uid://32d8fmowvh7l" path="res://Assets/Audio/Sounds/snd_miss.ogg" id="4_p8mme"]
+[ext_resource type="AudioStream" uid="uid://otvoh1fkq8px" path="res://Assets/Audio/Sounds/snd_multiswish.ogg" id="5_u7wkd"]
+[ext_resource type="AudioStream" uid="uid://dpx7vlckej0fx" path="res://Assets/Audio/Sounds/snd_impact.ogg" id="6_ojrk0"]
+
+[sub_resource type="Animation" id="Animation_at30d"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, -52)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprite:scale")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(2, 2)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Sprite:rotation")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Shadow:modulate")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0.392157)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Sounds/Stomp:playing")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("Sounds/Swish:playing")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("Sounds/Multiswish:playing")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("Sounds/Impact:playing")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+
+[sub_resource type="Animation" id="Animation_dgqax"]
+resource_name = "charge"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.9, 1),
+"transitions": PackedFloat32Array(1, 0.517632, 1),
+"update": 0,
+"values": [Vector2(2, 2), Vector2(2.66667, 1.46154), Vector2(2, 2)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprite:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.9, 1),
+"transitions": PackedFloat32Array(1, 0.517632, 1),
+"update": 0,
+"values": [Vector2(0, -52), Vector2(7.7486e-07, -38), Vector2(0, -52)]
+}
+
+[sub_resource type="Animation" id="Animation_elb4m"]
+resource_name = "jump"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.6, 0.8, 1),
+"transitions": PackedFloat32Array(1, 0.31864, 0.31864, 2.4, 1),
+"update": 0,
+"values": [Vector2(0, -52), Vector2(0, -160), Vector2(0, -160), Vector2(0.0750005, -45), Vector2(0, -52)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprite:scale")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.6, 0.8, 1),
+"transitions": PackedFloat32Array(1, 1, 2.4, 1),
+"update": 0,
+"values": [Vector2(2, 2), Vector2(1.82969, 2.15903), Vector2(3.10556, 1.73077), Vector2(2, 2)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Sprite:rotation")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.5, 0.6, 0.8),
+"transitions": PackedFloat32Array(1, 2.37841, 2.92817, 2.4),
+"update": 0,
+"values": [0.0, -0.261799, 0.0872665, 0.0]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Shadow:modulate")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.6, 0.7),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0.392157), Color(1, 1, 1, 0.176471), Color(1, 1, 1, 0.176471), Color(1, 1, 1, 0.392157)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Sounds/Stomp:playing")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0.7),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("Sounds/Swish:playing")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0.6),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("Sounds/Multiswish:playing")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("Sounds/Impact:playing")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(0.7),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_qyiru"]
+_data = {
+"RESET": SubResource("Animation_at30d"),
+"charge": SubResource("Animation_dgqax"),
+"jump": SubResource("Animation_elb4m")
+}
+
+[node name="Red" instance=ExtResource("1_kvrwl")]
+
+[node name="Shadow" parent="." index="0"]
+position = Vector2(-3.57628e-07, 0)
+scale = Vector2(2.22222, 2)
+
+[node name="Sprite" parent="." index="1"]
+position = Vector2(0, -52)
+texture = ExtResource("2_km0be")
+hframes = 2
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." index="4"]
+libraries = {
+"": SubResource("AnimationLibrary_qyiru")
+}
+
+[node name="Sounds" type="Node2D" parent="." index="5"]
+
+[node name="Stomp" type="AudioStreamPlayer2D" parent="Sounds" index="0"]
+stream = ExtResource("3_kjgn4")
+volume_db = 20.0
+
+[node name="Swish" type="AudioStreamPlayer2D" parent="Sounds" index="1"]
+stream = ExtResource("4_p8mme")
+pitch_scale = 0.5
+
+[node name="Multiswish" type="AudioStreamPlayer2D" parent="Sounds" index="2"]
+stream = ExtResource("5_u7wkd")
+
+[node name="Impact" type="AudioStreamPlayer2D" parent="Sounds" index="3"]
+stream = ExtResource("6_ojrk0")
+volume_db = -10.0

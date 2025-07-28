@@ -1,0 +1,30 @@
+[gd_scene load_steps=6 format=3 uid="uid://cl8ohrjtjfpko"]
+
+[ext_resource type="Script" path="res://Screens/Rooms/Room.gd" id="1_76vdi"]
+[ext_resource type="TileSet" uid="uid://b4pwisghr8q75" path="res://Tiles/test_tiles.tres" id="2_50u14"]
+[ext_resource type="PackedScene" uid="uid://byhmbw73rxff0" path="res://Entities/Player/Player.tscn" id="3_bex1b"]
+[ext_resource type="PackedScene" uid="uid://sl022k4fd34i" path="res://Entities/Bosses/Red/RedBoss.tscn" id="4_773s2"]
+[ext_resource type="Script" path="res://General/Camera.gd" id="5_q4qq1"]
+
+[node name="TestRoom" type="Node2D"]
+script = ExtResource("1_76vdi")
+music = &"bikersbattle"
+music_volume = 25.0
+
+[node name="TileMap" type="TileMap" parent="." groups=["navigation"]]
+tile_set = ExtResource("2_50u14")
+format = 2
+layer_0/tile_data = PackedInt32Array(262151, 65538, 1, 393223, 65538, 1, 458759, 65538, 2, 262152, 65538, 1, 393224, 65538, 1, 458760, 65538, 2, 262153, 65538, 1, 393225, 65538, 1, 458761, 65538, 2, 262154, 65538, 1, 393226, 65538, 1, 458762, 65538, 2, 262155, 65538, 1, 393227, 65538, 1, 458763, 65538, 2, 196615, 65538, 0, 196616, 65538, 0, 196617, 65538, 0, 196618, 65538, 0, 196619, 65538, 0, 196612, 65538, 0, 262148, 65538, 1, 393220, 65538, 1, 458756, 65538, 2, 196611, 2, 0, 262147, 2, 1, 393219, 2, 1, 458755, 2, 2, 196621, 65538, 0, 262157, 65538, 1, 393229, 65538, 1, 458765, 65538, 2, 196622, 131074, 0, 262158, 131074, 1, 393230, 131074, 1, 458766, 131074, 2, 196613, 65538, 0, 262149, 65538, 1, 393221, 65538, 1, 458757, 65538, 2, 196620, 65538, 0, 262156, 65538, 1, 393228, 65538, 1, 458764, 65538, 2, 327683, 2, 1, 327684, 65538, 1, 327685, 65538, 1, 327687, 65538, 1, 327688, 65538, 1, 327689, 65538, 1, 327690, 65538, 1, 327691, 65538, 1, 327692, 65538, 1, 327693, 65538, 1, 327694, 131074, 1, 196614, 65538, 0, 262150, 65538, 1, 327686, 65538, 1, 393222, 65538, 1, 458758, 65538, 2)
+
+[node name="Player" parent="." instance=ExtResource("3_bex1b")]
+position = Vector2(389, 417)
+
+[node name="Red" parent="." instance=ExtResource("4_773s2")]
+position = Vector2(777, 334)
+
+[node name="Camera2D" type="Camera2D" parent="."]
+visible = false
+position = Vector2(576, 324)
+position_smoothing_speed = 7.0
+editor_draw_limits = true
+script = ExtResource("5_q4qq1")

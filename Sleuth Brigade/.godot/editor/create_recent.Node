@@ -1,0 +1,14 @@
+AnimationPlayer
+RayCast2D
+CollisionShape2D
+Area2D
+StaticBody2D
+Marker2D
+Node2D
+Control
+VBoxContainer
+Button
+CharacterBody2D
+NavigationRegion2D
+NavigationAgent2D
+TileMap

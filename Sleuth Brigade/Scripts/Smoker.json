@@ -1,0 +1,42 @@
+[
+	{
+		"Portrait": 0, "Character": "travis", "Expression": "neutral", "Setup": [1,"smoker"],
+		"Text": "Hey I'm running an investigation into cult activity on this island. You don't happen to know anything about that, do you?"
+	},
+	{
+		"Portrait": 1, "Character": "smoker", "Expression": "neutral",
+		"Text": "Nawwww bruv I don't know nothin' about any cult activity, that's peak mate."
+	},
+	{
+		"Portrait": 1, "Character": "smoker", "Expression": "neutral",
+		"Text": "I'm actually just enjoying my mornin' cig! I always crave a cheeky bit of nicotine in the morning..."
+	},
+	{
+		"Portrait": 1, "Character": "smoker", "Expression": "lookback",
+		"Text": "Matter of fact..."
+	},
+	{
+		"Portrait": 1, "Character": "smoker", "Expression": "lookback", "Effect": "wave",
+		"Text": "... Awwwwwwwwww man......."
+	},
+	{
+		"Portrait": 1, "Character": "smoker", "Expression": "neutral", "Effect": "wave",
+		"Text": "Yeeeeaaahhh it just kicked in mate......"
+	},
+	{
+		"Portrait": 1, "Character": "smoker", "Expression": "lookback", "Effect": "wave",
+		"Text": "Ooooooohhh brother that's the stuff..........."
+	},
+	{
+		"Portrait": 1, "Character": "smoker", "Expression": "neutral", "Effect": "wave",
+		"Text": "Awwwwwwwwwwwwwwwwwwwww blimey mate I do love me a bit of nicotine..........."
+	},
+	{
+		"Portrait": 1, "Character": "smoker", "Expression": "neutral", "Tag": "spoken", "Effect": "wave", "Setup": [0,"travis"],
+		"Text": "Hooooooooooooooooooolyyyyyy quacamole mate........"
+	},
+	{
+		"Portrait": 1, "Character": "smoker", "Expression": "neutral", "Tag": "whatever",
+		"Text": "NOTE: AT SOME POINT HAVE HIM MENTION THE CASHIER IS 'BARLEY IN MOST THE TIME' TO FORESHADOW SHIT"
+	}
+]

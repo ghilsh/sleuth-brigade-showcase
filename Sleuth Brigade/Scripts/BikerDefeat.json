@@ -1,0 +1,154 @@
+[
+	{
+		"Portrait": 1, "Character": "red", "Expression": "neutral", "Setup": [0,"travis"], "Effect": "shake",
+		"Text": "ALRIGHT, PAUSE! RELAX!!! TIME OUT!!!!! CEASE!!!!!!!!!!"
+	},
+	{
+		"Portrait": 1, "Character": "red", "Expression": "neutral", "Setup": [0,"travis"], "Tag": "jumped",
+		"Text": "Yeh don't gotta hit so bloody HARD man, CHRIST!"
+	},
+	{
+		"Portrait": 1, "Character": "red", "Expression": "neutral",
+		"Text": "I'm gettin' all hot and bothered over here!"
+	},
+	{
+		"Portrait": 0, "Character": "green", "Expression": "knifepoint",
+		"Text": "It would seem to me as though an apology may be in order, Mr. Pickleberry, ahahahahah......"
+	},
+	{
+		"Portrait": 0, "Character": "travis", "Expression": "neutral",
+		"Text": "An apology, hm? Yeah, that's not happening."
+	},
+	{
+		"Portrait": 0, "Character": "travis", "Expression": "neutral",
+		"Text": "The pain you're feeling right now is your body telling you to become stronger. Maybe you should listen to it."
+	},
+	{
+		"Portrait": 0, "Character": "travis", "Expression": "neutral",
+		"Text": "Heh."
+	},
+	{
+		"Portrait": 1, "Character": "red", "Expression": "neutral",
+		"Text": "... Wuat?"
+	},
+	{
+		"Portrait": 1, "Character": "green", "Expression": "knifepoint",
+		"Text": "Alright, that's does it."
+	},
+	{
+		"Portrait": 1, "Character": "green", "Expression": "knifepoint",
+		"Text": "The deputy's throat."
+	},
+	{
+		"Portrait": 1, "Character": "green", "Expression": "knifepoint", "Effect": "shake",
+		"Text": "Is getting slit."
+	},
+	{
+		"Portrait": 1, "Character": "doug", "Expression": "knifepoint", "Music": "bikers",
+		"Text": "whUH- THE HELL DID I DO???????????????"
+	},
+	{
+		"Portrait": 0, "Character": "red", "Expression": "neutral",
+		"Text": "Well obviously you... you, uh..."
+	},
+	{
+		"Portrait": 0, "Character": "red", "Expression": "neutral",
+		"Text": "Actually, yeah, what did that one do???"
+	},
+	{
+		"Portrait": 1, "Character": "green", "Expression": "knifepoint",
+		"Text": "The sunglasses man is most fearsome, and would swiftly kick my bum big time."
+	},
+	{
+		"Portrait": 1, "Character": "green", "Expression": "knifepoint",
+		"Text": "By contrast, this one is a bit of a wet blanket."
+	},
+	{
+		"Portrait": 0, "Character": "red", "Expression": "neutral",
+		"Text": "Oh, right! Seems fair."
+	},
+	{
+		"Portrait": 1, "Character": "doug", "Expression": "knifepoint",
+		"Text": "Woah okay easy now easy now okay relax I think we just need to consider that uh well......"
+	},
+	{
+		"Portrait": 1, "Character": "doug", "Expression": "knifepoint_forward",
+		"Text": "... So, ''Boris'', is it?"
+	},
+	{
+		"Portrait": 0, "Character": "red", "Expression": "neutral",
+		"Text": "Oi, that's BIG BORIS to yeh, dickhead."
+	},
+	{
+		"Portrait": 1, "Character": "green", "Expression": "knifepoint",
+		"Text": "(Because you truly are the biggest of boys, ahahahehe...)"
+	},
+	{
+		"Portrait": 0, "Character": "red", "Expression": "neutral",
+		"Text": "(Teehee, oh stop it you...!)"
+	},
+	{
+		"Portrait": 1, "Character": "doug", "Expression": "knifepoint",
+		"Text": "Well, alright, my fault, but..."
+	},
+	{
+		"Portrait": 1, "Character": "doug", "Expression": "knifepoint_forward", "Fadeout": 5.0,
+		"Text": "I mean, can't you see that this is battle is making you two... lose sight of what's really important...?"
+	},
+	{
+		"Portrait": 1, "Character": "green", "Expression": "knifepoint",
+		"Text": "... Elaborate."
+	},
+	{
+		"Portrait": 1, "Character": "doug", "Expression": "knifepoint",
+		"Text": "Well, Boris- uh, ''Big Boris'', you seem awfully fixated on my boss Travis over there."
+	},
+	{
+		"Portrait": 1, "Character": "doug", "Expression": "knifepoint",
+		"Text": "And I noticed that, y'know, he's wearing a bit of green right?"
+	},
+	{
+		"Portrait": 1, "Character": "doug", "Expression": "knifepoint",
+		"Text": "Any... any other green guys you'd be better of spending time with?"
+	},
+	{
+		"Portrait": 0, "Character": "red", "Expression": "neutral",
+		"Text": "(Sniffles) You're right..."
+	},
+	{
+		"Portrait": 0, "Character": "red", "Expression": "neutral", "Effect": "shake",
+		"Text": "... You're totally damn well right lad................."
+	},
+	{
+		"Portrait": 1, "Character": "green", "Expression": "knifepoint",
+		"Text": "Well, this encounter has truly been illuminating."
+	},
+	{
+		"Portrait": 1, "Character": "green", "Expression": "knifepoint",
+		"Text": "Thank you, sunglasses man. Remind me to _____ in the future."
+	},
+	{
+		"Portrait": 0, "Character": "travis", "Expression": "neutral",
+		"Text": "I will be sure to do that."
+	},
+	{
+		"Portrait": 0, "Character": "red", "Expression": "neutral",
+		"Text": "Alrighty lads, off we pop!!!"
+	},
+	{
+		"Portrait": 1, "Character": "doug", "Expression": "stink", "Tag": "doug", "Setup": [0,"travis"], "Sprite": "flipped",
+		"Text": "Interesting bunch."
+	},
+	{
+		"Portrait": 1, "Character": "doug", "Expression": "neutral", "Tag": "introductions",
+		"Text": "I assume that's not usually how these things go, huh."
+	},
+	{
+		"Portrait": 0, "Character": "travis", "Expression": "neutral",
+		"Text": "Not really, no."
+	},
+	{
+		"Portrait": 1, "Character": "doug", "Expression": "neutral",
+		"Text": "Well, lead the way Travis."
+	}
+]

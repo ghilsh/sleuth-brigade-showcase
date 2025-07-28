@@ -1,0 +1,15 @@
+[gd_scene load_steps=3 format=3 uid="uid://lc7dgd0swvdh"]
+
+[ext_resource type="PackedScene" uid="uid://duxvg4yh4tj66" path="res://Entities/NPCs/npc.tscn" id="1_vwet2"]
+[ext_resource type="Texture2D" uid="uid://iemifk5u50jo" path="res://Assets/Images/dog.png" id="2_arjh8"]
+
+[node name="NPC" instance=ExtResource("1_vwet2")]
+
+[node name="Shadow" parent="." index="0"]
+position = Vector2(-2.38419e-07, -1.5)
+scale = Vector2(2.14815, 1.66667)
+
+[node name="Sprite" parent="." index="1"]
+position = Vector2(0, -25)
+texture = ExtResource("2_arjh8")
+hframes = 1

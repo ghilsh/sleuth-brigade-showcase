@@ -1,0 +1,47 @@
+[
+	{
+		"Portrait": 1, "Character": "hunter", "Expression": "neutral",
+		"Text": "You alright mate?"
+	},
+	{
+		"Portrait": 0, "Character": "travis", "Expression": "neutral",
+		"Text": "Could be worse. You got a problem?"
+	},
+	{
+		"Portrait": 1, "Character": "hunter", "Expression": "shifty", "Question": "SystemQuestion",
+		"Text": "Just wondering, what do we think about this nifty new choicer system, eh?",
+		"Choices":["Pretty solid","Sucks ass","Who cares"]
+	},
+	{
+		"Portrait": 1, "Character": "hunter", "Expression": "neutral", "SystemQuestion": 0,
+		"Text": "Uh huh, it sure is pretty damn rad."
+	},
+	{
+		"Portrait": 1, "Character": "hunter", "Expression": "neutral",
+		"Text": "Like, ''totally tubular'', dude."
+	},
+	{
+		"Portrait": 1, "Character": "hunter", "Expression": "haughty", "SystemQuestion": 1,
+		"Text": "Ah, in a bit of a cheeky mood, are we?"
+	},
+	{
+		"Portrait": 1, "Character": "hunter", "Expression": "haughty",
+		"Text": "Oh you gassy little chungus you. You repugnant chud."
+	},
+	{
+		"Portrait": 0, "Character": "travis", "Expression": "neutral",
+		"Text": "What"
+	},
+	{
+		"Portrait": 1, "Character": "hunter", "Expression": "lookback", "SystemQuestion": 2,
+		"Text": "Fair."
+	},
+	{
+		"Portrait": 1, "Character": "hunter", "Expression": "lookback",
+		"Text": "Like, yeah, whatever I guess.........."
+	},
+	{
+		"Portrait": 1, "Character": "hunter", "Expression": "neutral", "Resume": "SystemQuestion",
+		"Text": "I mean, hey, I appreciate the feedback either way."
+	}
+]

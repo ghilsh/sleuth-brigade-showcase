@@ -1,0 +1,22 @@
+[
+	{
+		"Portrait": 1, "Character": "doug", "Expression": "neutral", "Setup": [0,"travis"],
+		"Text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod"
+	},
+	{
+		"Portrait": 1, "Character": "doug", "Expression": "stink",
+		"Text": "Okay man i'm not sure what the hell just came out my mouth but boy oh howdy did i not like that one bit"
+	},
+	{
+		"Portrait": 1, "Character": "doug", "Expression": "awkies",
+		"Text": "Ummmmmmmmmmmmmmm....... well did it just get hot in here or might that just be me??????"
+	},
+	{
+		"Portrait": 1, "Character": "doug", "Expression": "lookback",
+		"Text": "Okay so maybe it wasnt sooooooooooooooooooooooooooooooooooooooo bad i guess........"
+	},
+	{
+		"Portrait": 1, "Character": "doug", "Expression": "flabbergasted",
+		"Text": "....."
+	}
+]

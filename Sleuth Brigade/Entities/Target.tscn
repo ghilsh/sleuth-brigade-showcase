@@ -1,0 +1,24 @@
+[gd_scene load_steps=4 format=3 uid="uid://c515vu3ry4hg"]
+
+[ext_resource type="Script" path="res://Entities/Target.gd" id="1_4mf7t"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_g367x"]
+size = Vector2(2, 2)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_wts7b"]
+size = Vector2(2, 2)
+
+[node name="Target" type="CharacterBody2D"]
+script = ExtResource("1_4mf7t")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_g367x")
+disabled = true
+debug_color = Color(0.756402, 0.455085, 3.85046e-07, 0.42)
+
+[node name="Area" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area"]
+shape = SubResource("RectangleShape2D_wts7b")
+
+[connection signal="body_entered" from="Area" to="." method="_on_area_body_entered"]

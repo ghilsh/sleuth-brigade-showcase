@@ -1,0 +1,23 @@
+[gd_scene load_steps=4 format=3 uid="uid://d13b6s5j61dkb"]
+
+[ext_resource type="Texture2D" uid="uid://cw3ece41aq70e" path="res://Assets/Images/bat.png" id="2_luk3w"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_7j5y7"]
+size = Vector2(36, 7)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_ucqj5"]
+radius = 72.0069
+
+[node name="Item" type="CharacterBody2D"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_7j5y7")
+
+[node name="Sprite" type="Sprite2D" parent="."]
+scale = Vector2(2, 2)
+texture = ExtResource("2_luk3w")
+
+[node name="Range" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Range"]
+shape = SubResource("CircleShape2D_ucqj5")

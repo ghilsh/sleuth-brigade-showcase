@@ -1,0 +1,24 @@
+[gd_scene load_steps=2 format=3 uid="uid://dbry4ltfefi8n"]
+
+[ext_resource type="Script" path="res://General/Console.gd" id="1_6cyeh"]
+
+[node name="Console" type="CanvasLayer"]
+layer = 128
+script = ExtResource("1_6cyeh")
+
+[node name="PanelContainer" type="PanelContainer" parent="."]
+offset_right = 384.0
+offset_bottom = 224.0
+
+[node name="Text" type="RichTextLabel" parent="."]
+offset_right = 384.0
+offset_bottom = 224.0
+bbcode_enabled = true
+
+[node name="Input" type="LineEdit" parent="."]
+offset_top = 224.0
+offset_right = 384.0
+offset_bottom = 256.0
+
+[connection signal="finished" from="Text" to="." method="_on_text_finished"]
+[connection signal="text_changed" from="Input" to="." method="_on_input_text_changed"]

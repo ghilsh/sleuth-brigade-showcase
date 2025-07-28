@@ -1,0 +1,145 @@
+[gd_scene load_steps=15 format=3 uid="uid://byhmbw73rxff0"]
+
+[ext_resource type="Script" path="res://Entities/Player/Player.gd" id="1_c20lx"]
+[ext_resource type="Texture2D" uid="uid://cu3b8021h5ehh" path="res://Assets/Images/travis.png" id="1_ugvms"]
+[ext_resource type="Texture2D" uid="uid://caaubixch2xh2" path="res://Assets/Images/shadow.png" id="2_hcp8a"]
+[ext_resource type="PackedScene" uid="uid://1l0tnvtlsbyc" path="res://Entities/Player/Overlay.tscn" id="2_qd76r"]
+[ext_resource type="Texture2D" uid="uid://bk6d46sw1l7mx" path="res://Assets/Images/bucket.png" id="3_4a4p0"]
+[ext_resource type="Shader" path="res://UI/Flash.gdshader" id="3_hjdxc"]
+[ext_resource type="AudioStream" uid="uid://ddssib5yd2peo" path="res://Assets/Audio/Sounds/snd_place.wav" id="7_7nhui"]
+[ext_resource type="PackedScene" uid="uid://djfd0et0mfqxe" path="res://Entities/Player/Bat.tscn" id="8_wessx"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_ps8r1"]
+shader = ExtResource("3_hjdxc")
+shader_parameter/flash_color = Color(1, 1, 1, 1)
+shader_parameter/flash_value = null
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_way62"]
+size = Vector2(32, 10)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ejgmu"]
+size = Vector2(60, 63)
+
+[sub_resource type="Animation" id="Animation_wcxix"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("SpritePivot/Sprite:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("SpritePivot/Sprite:scale")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(2, 2)]
+}
+
+[sub_resource type="Animation" id="Animation_huspc"]
+resource_name = "change_expression"
+length = 0.4
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("SpritePivot/Sprite:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.4),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(0, 7.5), Vector2(0, -4), Vector2(0, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("SpritePivot/Sprite:scale")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.4),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(2.88889, 1.7541), Vector2(1.77778, 2.13115), Vector2(2, 2)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_etwch"]
+_data = {
+"RESET": SubResource("Animation_wcxix"),
+"change_expression": SubResource("Animation_huspc")
+}
+
+[node name="Player" type="CharacterBody2D"]
+collision_layer = 13
+collision_mask = 13
+script = ExtResource("1_c20lx")
+
+[node name="Shadow" type="Sprite2D" parent="."]
+modulate = Color(1, 1, 1, 0.392157)
+scale = Vector2(2, 2)
+texture = ExtResource("2_hcp8a")
+
+[node name="SpritePivot" type="Node2D" parent="."]
+position = Vector2(0, -61)
+
+[node name="BucketBack" type="Sprite2D" parent="SpritePivot"]
+visible = false
+position = Vector2(0, -34)
+scale = Vector2(2, 2)
+texture = ExtResource("3_4a4p0")
+hframes = 3
+frame = 2
+
+[node name="Sprite" type="Sprite2D" parent="SpritePivot"]
+material = SubResource("ShaderMaterial_ps8r1")
+scale = Vector2(2, 2)
+texture = ExtResource("1_ugvms")
+hframes = 4
+
+[node name="BucketFront" type="Sprite2D" parent="SpritePivot"]
+position = Vector2(0, -34)
+scale = Vector2(2, 2)
+texture = ExtResource("3_4a4p0")
+hframes = 3
+frame = 1
+
+[node name="Bat" parent="." instance=ExtResource("8_wessx")]
+
+[node name="Hitbox" type="CollisionShape2D" parent="."]
+position = Vector2(0, -5)
+shape = SubResource("RectangleShape2D_way62")
+
+[node name="HurtBox" type="Area2D" parent="."]
+visible = false
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="HurtBox"]
+position = Vector2(0, -32.5)
+shape = SubResource("RectangleShape2D_ejgmu")
+debug_color = Color(0.98275, 6.08854e-06, 1.54018e-06, 0.419608)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_etwch")
+}
+
+[node name="Overlay" parent="." instance=ExtResource("2_qd76r")]
+visible = false
+
+[node name="Node" type="Node" parent="."]
+
+[node name="Place" type="AudioStreamPlayer" parent="Node"]
+stream = ExtResource("7_7nhui")
+volume_db = -10.0
+bus = &"sfx"

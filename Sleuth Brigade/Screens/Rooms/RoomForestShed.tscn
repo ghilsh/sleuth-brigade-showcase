@@ -1,0 +1,68 @@
+[gd_scene load_steps=9 format=3 uid="uid://d1q0w2ad78geu"]
+
+[ext_resource type="TileSet" uid="uid://c4e1l3ddflha6" path="res://Tiles/shed_tiles.tres" id="1_etfe1"]
+[ext_resource type="Script" path="res://Screens/Rooms/Room.gd" id="1_m7elj"]
+[ext_resource type="PackedScene" uid="uid://byhmbw73rxff0" path="res://Entities/Player/Player.tscn" id="2_ffjmf"]
+[ext_resource type="Script" path="res://Triggers/Exit.gd" id="4_0in35"]
+[ext_resource type="PackedScene" uid="uid://lh2ga63wtkfu" path="res://Items/Beartrap.tscn" id="5_fuvcw"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_f11q5"]
+size = Vector2(128, 51.5)
+
+[sub_resource type="Gradient" id="Gradient_d3ypl"]
+offsets = PackedFloat32Array(0, 0.625899)
+colors = PackedColorArray(1, 1, 1, 1, 0, 0, 0, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_gx0ak"]
+gradient = SubResource("Gradient_d3ypl")
+fill = 1
+fill_from = Vector2(0.5, 0.5)
+
+[node name="RoomForestIntroShed" type="Node2D"]
+script = ExtResource("1_m7elj")
+outside = false
+music = &"forest"
+ambience = &"wind"
+music_volume = 30.0
+ambience_volume = 20.0
+
+[node name="TileMap" type="TileMap" parent="."]
+z_index = -1
+y_sort_enabled = true
+tile_set = ExtResource("1_etfe1")
+format = 2
+layer_0/name = "collision"
+layer_0/tile_data = PackedInt32Array(458758, 131073, 1, 458759, 131073, 1, 524295, 131073, 1, 524296, 131073, 1, 524297, 131073, 1, 524298, 131073, 1, 458762, 131073, 1, 458763, 131073, 1, 458764, 131073, 1, 393228, 131073, 1, 327692, 131073, 1, 262156, 131073, 1, 196620, 131073, 1, 196619, 131073, 1, 196618, 131073, 1, 196617, 131073, 1, 196616, 131073, 1, 196615, 131073, 1, 196614, 131073, 1, 196613, 131073, 1, 262149, 131073, 1, 327685, 131073, 1, 393221, 131073, 1, 458757, 131073, 1)
+layer_1/name = "base"
+layer_1/tile_data = PackedInt32Array(393222, 1, 1, 393223, 131073, 0, 393224, 131073, 0, 393225, 131073, 0, 393226, 131073, 0, 393227, 65537, 1, 458760, 1, 1, 458761, 65537, 1, 327686, 131073, 0, 327687, 131073, 0, 327688, 131073, 0, 327689, 131073, 0, 327690, 131073, 0, 327691, 131073, 0, 131078, 1, 2, 131079, 65537, 2, 131080, 65537, 2, 131081, 65537, 2, 131082, 65537, 2, 131083, 131073, 2, 196619, 65537, 2, 196618, 65537, 2, 196617, 65537, 2, 196616, 65537, 2, 196615, 65537, 2, 196614, 65537, 2, 262155, 131073, 0, 262154, 131073, 0, 262153, 131073, 0, 262152, 131073, 0, 262151, 131073, 0, 262150, 131073, 0)
+layer_2/name = "table"
+layer_2/y_sort_enabled = true
+layer_2/z_index = 1
+layer_2/tile_data = PackedInt32Array(262154, 196609, 0, 196615, 196609, 1, 131082, 262145, 0)
+
+[node name="Beartrap" parent="." instance=ExtResource("5_fuvcw")]
+position = Vector2(702, 281)
+
+[node name="Player" parent="." instance=ExtResource("2_ffjmf")]
+position = Vector2(579, 443)
+
+[node name="Exit" type="Area2D" parent="."]
+position = Vector2(0, -69)
+script = ExtResource("4_0in35")
+destination = "res://Screens/Rooms/RoomForest.tscn"
+tag = 1
+metadata/_edit_group_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Exit"]
+position = Vector2(576, 554)
+shape = SubResource("RectangleShape2D_f11q5")
+
+[node name="DirectionalLight2D" type="DirectionalLight2D" parent="."]
+energy = 0.3
+blend_mode = 1
+
+[node name="PointLight2D" type="PointLight2D" parent="."]
+position = Vector2(566, 626)
+scale = Vector2(14.7377, 13.7764)
+energy = 0.4
+texture = SubResource("GradientTexture2D_gx0ak")

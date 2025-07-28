@@ -1,0 +1,78 @@
+[gd_scene load_steps=10 format=3 uid="uid://w3jhregyy51m"]
+
+[ext_resource type="Script" path="res://Items/Explosion.gd" id="1_gl50h"]
+[ext_resource type="AudioStream" uid="uid://b8yqk26bjc2p1" path="res://Assets/Audio/Sounds/snd_explode.ogg" id="2_pev16"]
+
+[sub_resource type="Curve" id="Curve_ababk"]
+_data = [Vector2(0.0121951, 1), 0.0, 0.0, 0, 0, Vector2(1, 0.230769), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="Gradient" id="Gradient_wu2m6"]
+offsets = PackedFloat32Array(0, 0.653061, 0.992647)
+colors = PackedColorArray(1, 0.65098, 0, 1, 0.901479, 0.302715, 0, 1, 0, 0, 0, 0)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_2w0u8"]
+radius = 92.0489
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_ee64k"]
+radius = 85.0132
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_pgxn3"]
+radius = 75.5017
+
+[sub_resource type="Gradient" id="Gradient_gylas"]
+offsets = PackedFloat32Array(0, 0.685714)
+colors = PackedColorArray(1, 1, 1, 1, 0, 0, 0, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_wbfta"]
+gradient = SubResource("Gradient_gylas")
+width = 200
+height = 200
+fill = 1
+fill_from = Vector2(0.5, 0.5)
+fill_to = Vector2(0, 0)
+
+[node name="Explosion" type="CPUParticles2D"]
+scale = Vector2(2, 2)
+emitting = false
+amount = 60
+lifetime = 0.5
+one_shot = true
+explosiveness = 1.0
+spread = 180.0
+gravity = Vector2(0, 0)
+initial_velocity_min = 10.0
+initial_velocity_max = 200.0
+scale_amount_min = 15.0
+scale_amount_max = 20.0
+scale_amount_curve = SubResource("Curve_ababk")
+color_ramp = SubResource("Gradient_wu2m6")
+hue_variation_max = 1.0
+script = ExtResource("1_gl50h")
+
+[node name="HurtRange" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="HurtRange"]
+shape = SubResource("CircleShape2D_2w0u8")
+debug_color = Color(0.839071, 0.384535, 7.70092e-07, 0.42)
+
+[node name="PlayerRange" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PlayerRange"]
+shape = SubResource("CircleShape2D_ee64k")
+debug_color = Color(0, 0.640572, 0.347856, 0.42)
+
+[node name="DeathRange" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="DeathRange"]
+shape = SubResource("CircleShape2D_pgxn3")
+debug_color = Color(0.800647, 0, 0.0439982, 0.42)
+
+[node name="PointLight2D" type="PointLight2D" parent="."]
+visible = false
+energy = 0.4
+texture = SubResource("GradientTexture2D_wbfta")
+
+[node name="Explode" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("2_pev16")
+bus = &"sfx"

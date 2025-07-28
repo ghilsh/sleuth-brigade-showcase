@@ -1,0 +1,38 @@
+[gd_scene load_steps=6 format=3 uid="uid://duxvg4yh4tj66"]
+
+[ext_resource type="Script" path="res://Entities/NPCs/NPC.gd" id="1_ktyke"]
+[ext_resource type="Texture2D" uid="uid://caaubixch2xh2" path="res://Assets/Images/shadow.png" id="2_vl8pf"]
+[ext_resource type="Texture2D" uid="uid://cu3b8021h5ehh" path="res://Assets/Images/travis.png" id="3_1kol2"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_way62"]
+size = Vector2(32, 10)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_e3ske"]
+radius = 99.0454
+
+[node name="NPC" type="CharacterBody2D"]
+collision_layer = 9
+collision_mask = 9
+script = ExtResource("1_ktyke")
+
+[node name="Shadow" type="Sprite2D" parent="."]
+modulate = Color(1, 1, 1, 0.392157)
+scale = Vector2(2, 2)
+texture = ExtResource("2_vl8pf")
+
+[node name="Sprite" type="Sprite2D" parent="."]
+position = Vector2(0, -54)
+scale = Vector2(2, 2)
+texture = ExtResource("3_1kol2")
+hframes = 3
+
+[node name="Hitbox" type="CollisionShape2D" parent="."]
+visible = false
+position = Vector2(0, -5)
+shape = SubResource("RectangleShape2D_way62")
+
+[node name="DialogArea" type="Area2D" parent="."]
+visible = false
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="DialogArea"]
+shape = SubResource("CircleShape2D_e3ske")

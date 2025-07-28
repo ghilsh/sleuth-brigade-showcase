@@ -1,0 +1,11 @@
+[gd_scene load_steps=3 format=3 uid="uid://duss8saep1e6j"]
+
+[ext_resource type="PackedScene" uid="uid://duxvg4yh4tj66" path="res://Entities/NPCs/npc.tscn" id="1_dp4oi"]
+[ext_resource type="Texture2D" uid="uid://cw52trqu6yviu" path="res://Assets/Images/smoker.png" id="2_7vjdp"]
+
+[node name="Smoker" instance=ExtResource("1_dp4oi")]
+dialog = &"Smoker"
+
+[node name="Sprite" parent="." index="1"]
+position = Vector2(0, -59)
+texture = ExtResource("2_7vjdp")

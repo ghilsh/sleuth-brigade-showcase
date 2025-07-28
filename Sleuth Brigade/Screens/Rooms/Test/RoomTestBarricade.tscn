@@ -1,0 +1,42 @@
+[gd_scene load_steps=8 format=3 uid="uid://bgvc2e3iunwi4"]
+
+[ext_resource type="Script" path="res://Screens/Rooms/Room.gd" id="1_xewb6"]
+[ext_resource type="TileSet" uid="uid://b4pwisghr8q75" path="res://Tiles/test_tiles.tres" id="2_mrm85"]
+[ext_resource type="PackedScene" uid="uid://byhmbw73rxff0" path="res://Entities/Player/Player.tscn" id="3_3mpgs"]
+[ext_resource type="Script" path="res://General/Camera.gd" id="5_ltnq7"]
+[ext_resource type="PackedScene" uid="uid://4p5xfn4h8afo" path="res://Tiles/Barricade/Switch.tscn" id="5_qqmtx"]
+[ext_resource type="PackedScene" uid="uid://b4dmsk4dk1ofy" path="res://Tiles/Barricade/Barricade.tscn" id="5_rjnk0"]
+[ext_resource type="PackedScene" uid="uid://lh2ga63wtkfu" path="res://Items/Beartrap.tscn" id="6_cuqds"]
+
+[node name="TestRoom" type="Node2D"]
+script = ExtResource("1_xewb6")
+music = &"forest"
+ambience = &"cave"
+music_volume = 10.0
+
+[node name="TileMap" type="TileMap" parent="." groups=["navigation"]]
+tile_set = ExtResource("2_mrm85")
+format = 2
+layer_0/tile_data = PackedInt32Array(458760, 2, 1, 458761, 131074, 1, 262149, 2, 0, 327685, 2, 1, 393221, 2, 2, 262150, 65538, 0, 327686, 65538, 1, 393222, 65538, 2, 262151, 65538, 0, 327687, 65538, 1, 393223, 65538, 2, 262152, 65538, 0, 327688, 65538, 1, 393224, 65538, 1, 262153, 65538, 0, 327689, 65538, 1, 393225, 65538, 1, 262154, 65538, 0, 327690, 65538, 1, 393226, 65538, 2, 262155, 65538, 0, 327691, 65538, 1, 393227, 65538, 2, 262156, 131074, 0, 327692, 131074, 1, 393228, 131074, 2, 524296, 2, 1, 589832, 2, 2, 524297, 131074, 1, 589833, 131074, 2)
+
+[node name="Player" parent="." instance=ExtResource("3_3mpgs")]
+position = Vector2(389, 417)
+
+[node name="Barricade" parent="." instance=ExtResource("5_rjnk0")]
+position = Vector2(576, 477)
+
+[node name="Switch" parent="." instance=ExtResource("5_qqmtx")]
+position = Vector2(372, 190)
+
+[node name="Switch2" parent="." instance=ExtResource("5_qqmtx")]
+position = Vector2(780, 190)
+
+[node name="Beartrap" parent="." instance=ExtResource("6_cuqds")]
+position = Vector2(588, 564)
+
+[node name="Camera2D" type="Camera2D" parent="."]
+visible = false
+position = Vector2(576, 324)
+position_smoothing_speed = 7.0
+editor_draw_limits = true
+script = ExtResource("5_ltnq7")

@@ -1,0 +1,26 @@
+[
+	{
+		"Portrait": 1, "Character": "child", "Expression": "neutral", "Setup": [0,"travis"],
+		"Text": "Falalalala I am a little girl hahah wheeeeeeeee!!!"
+	},
+	{
+		"Portrait": 0, "Character": "travis", "Expression": "neutral",
+		"Text": "Hello, I am currently carrying out an investigation on reports of cult behaviour on this island. Do you know anything about that?"
+	},
+	{
+		"Portrait": 1, "Character": "child", "Expression": "neutral",
+		"Text": "Hahahahahaaaaaahh googa gago phhhfffttt burp"
+	},
+	{
+		"Portrait": 0, "Character": "travis", "Expression": "neutral",
+		"Text": "It's illegal to be uncooperative with a government offical, you know."
+	},
+	{
+		"Portrait": 1, "Character": "child", "Expression": "neutral", "Tag": "spoken",
+		"Text": "Ahahahahahahahahahahah googa goga cough"
+	},
+	{
+		"Portrait": 0, "Character": "travis", "Expression": "neutral",
+		"Text": "Meaningless."
+	}
+]

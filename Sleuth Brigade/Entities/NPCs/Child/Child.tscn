@@ -1,0 +1,16 @@
+[gd_scene load_steps=3 format=3 uid="uid://d0uxg3ik7gje4"]
+
+[ext_resource type="PackedScene" uid="uid://duxvg4yh4tj66" path="res://Entities/NPCs/npc.tscn" id="1_82bhw"]
+[ext_resource type="Texture2D" uid="uid://rwf7hk7xu33j" path="res://Assets/Images/child.png" id="2_pyyhj"]
+
+[node name="Child" instance=ExtResource("1_82bhw")]
+dialog = &"Child"
+
+[node name="Shadow" parent="." index="0"]
+position = Vector2(2.26498e-06, -2)
+scale = Vector2(2, 1.55556)
+
+[node name="Sprite" parent="." index="1"]
+position = Vector2(0, -48)
+texture = ExtResource("2_pyyhj")
+hframes = 2

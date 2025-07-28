@@ -1,0 +1,18 @@
+[gd_scene load_steps=3 format=3 uid="uid://cht2i7ginpdxo"]
+
+[ext_resource type="PackedScene" uid="uid://duxvg4yh4tj66" path="res://Entities/NPCs/npc.tscn" id="1_oo5fn"]
+[ext_resource type="Texture2D" uid="uid://d33hl43aifemo" path="res://Assets/Images/warden.png" id="2_5qdmq"]
+
+[node name="Warden" instance=ExtResource("1_oo5fn")]
+
+[node name="Shadow" parent="." index="0"]
+position = Vector2(-1.43051e-06, -3)
+scale = Vector2(3.11111, 2.66667)
+
+[node name="Sprite" parent="." index="1"]
+position = Vector2(0, -63)
+texture = ExtResource("2_5qdmq")
+hframes = 2
+
+[node name="Hitbox" parent="." index="2"]
+position = Vector2(0, -15)

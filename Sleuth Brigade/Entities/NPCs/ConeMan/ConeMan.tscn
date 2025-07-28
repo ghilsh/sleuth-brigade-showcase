@@ -1,0 +1,10 @@
+[gd_scene load_steps=3 format=3 uid="uid://vgo7a4gvqfc2"]
+
+[ext_resource type="PackedScene" uid="uid://duxvg4yh4tj66" path="res://Entities/NPCs/npc.tscn" id="1_i2sxl"]
+[ext_resource type="Texture2D" uid="uid://de0efy0gnpq1p" path="res://Assets/Images/cone_man.png" id="2_metq2"]
+
+[node name="ConeMan" instance=ExtResource("1_i2sxl")]
+
+[node name="Sprite" parent="." index="1"]
+position = Vector2(0, -77)
+texture = ExtResource("2_metq2")

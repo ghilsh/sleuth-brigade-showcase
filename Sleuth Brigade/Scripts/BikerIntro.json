@@ -1,0 +1,166 @@
+[
+	{
+		"Portrait": 1, "Character": "red", "Expression": "shadow",
+		"Text": "So yeh think yeh can just waltz onto OUR ISLAND, eh?"
+	},
+	{
+		"Portrait": 0, "Character": "travis", "Expression": "neutral",
+		"Text": "... Hm?"
+	},
+	{
+		"Portrait": 1, "Character": "red", "Expression": "shadow",
+		"Text": "Up 'ere, jackass!!!"
+	},
+	{
+		"Portrait": 1, "Character": "red", "Expression": "neutral", "Tag": "resume", "Setup": [0,"travis"], "Effect": "shake",
+		"Text": "[color=brown]BIG BORIS[color=black], COMIN' RIGHT AT-CHYEH!!!"
+	},
+	{
+		"Portrait": 1, "Character": "green", "Expression": "neutral", "Effect": "wave",
+		"Text": "[color=forest_green]Fernando Horhese[color=black], at your service darling....."
+	},
+	{
+		"Portrait": 0, "Character": "travis", "Expression": "neutral",
+		"Text": "Oh, can I help you two?"
+	},
+	{
+		"Portrait": 1, "Character": "green", "Expression": "neutral",
+		"Text": "Ahahah, ''Can I help you two'', ahahahahahah..."
+	},
+	{
+		"Portrait": 1, "Character": "red", "Expression": "neutral",
+		"Text": "Hah! Yeah you can help us alright!"
+	},
+	{
+		"Portrait": 1, "Character": "red", "Expression": "neutral",
+		"Text": "You can help us by... uuuuuh..."
+	},
+	{
+		"Portrait": 1, "Character": "red", "Expression": "neutral",
+		"Text": "... You can help us by getting your butt kicked for us, HAH!"
+	},
+	{
+		"Portrait": 1, "Character": "green", "Expression": "neutral",
+		"Text": "Ahahahahahahah..."
+	},
+	{
+		"Portrait": 0, "Character": "travis", "Expression": "neutral",
+		"Text": "Hmph, I actually refrain from getting in pointless squabbles, so if you wouldn't mind..."
+	},
+	{
+		"Portrait": 1, "Character": "red", "Expression": "neutral",
+		"Text": "HAH! Yeah right, lad! You ain't goin' nowhere, right Fern'?"
+	},
+	{
+		"Portrait": 0, "Character": "green", "Expression": "neutral", "Fadeout":10.0,
+		"Text": "..... Well, ahahahah, it would seem as though we've neglected to give him a proper motivator..."
+	},
+	{
+		"Portrait": 0, "Character": "green", "Expression": "neutral",
+		"Text": "Alas, the sunglasses man has no reason to engage in combat."
+	},
+	{
+		"Portrait": 1, "Character": "red", "Expression": "neutral",
+		"Text": "....."
+	},
+	{
+		"Portrait": 1, "Character": "red", "Expression": "neutral",
+		"Text": "..... Aw shiet."
+	},
+	{
+		"Portrait": 1, "Character": "red", "Expression": "neutral",
+		"Text": "Yeah you're totally right actually."
+	},
+	{
+		"Portrait": 1, "Character": "red", "Expression": "neutral",
+		"Text": "Damn, we really shoulda brought a hostage or somethin'."
+	},
+	{
+		"Portrait": 1, "Character": "doug", "Expression": "stink", "Tag": "doug", "Sprite": "flipped", "Setup": [0,"travis"],
+		"Text": "... Aww man, I'm gonna be sick."
+	},
+	{
+		"Portrait": 1, "Character": "doug", "Expression": "neutral", "Tag": "turned",
+		"Text": "Oh, Travis Pickleberry, right?"
+	},
+	{
+		"Portrait": 0, "Character": "travis", "Expression": "neutral",
+		"Text": "That's me, yeah."
+	},
+	{
+		"Portrait": 0, "Character": "travis", "Expression": "neutral",
+		"Text": "And you are?"
+	},
+	{
+		"Portrait": 1, "Character": "doug", "Expression": "neutral",
+		"Text": "Y'know, Doug Thompson... your deputy?"
+	},
+	{
+		"Portrait": 1, "Character": "doug", "Expression": "lookback",
+		"Text": "I'm meant to assist you during the investigation and stuff."
+	},
+	{
+		"Portrait": 1, "Character": "doug", "Expression": "awkies",
+		"Text": "You, uh, really don't remember being told about me?"
+	},
+	{
+		"Portrait": 0, "Character": "travis", "Expression": "neutral",
+		"Text": "No."
+	},
+	{
+		"Portrait": 0, "Character": "green", "Expression": "neutral",
+		"Text": "Deputy, you say?"
+	},
+	{
+		"Portrait": 1, "Character": "doug", "Expression": "neutral",
+		"Text": "Yeah...?"
+	},
+	{
+		"Portrait": 0, "Character": "red", "Expression": "neutral", "Tag": "knifepoint",
+		"Text": "WOAH!!!!!!"
+	},
+	{
+		"Portrait": 0, "Character": "travis", "Expression": "neutral",
+		"Text": "Damn."
+	},
+	{
+		"Portrait": 1, "Character": "doug", "Expression": "knifepoint", "Effect": "shake",
+		"Text": "AGGHH, CHRIST, GET THE HELL OFF ME!!!!!"
+	},
+	{
+		"Portrait": 1, "Character": "green", "Expression": "knifepoint",
+		"Text": "So, here's the deal, fool..."
+	},
+	{
+		"Portrait": 1, "Character": "green", "Expression": "knifepoint",
+		"Text": "Either you engage in the thrill of combat with my red affiliate over here..."
+	},
+	{
+		"Portrait": 1, "Character": "green", "Expression": "knifepoint",
+		"Text": "Or, ahahahah, I'm afraid I may have to hollow out your partners lungs via a cut through the throat."
+	},
+	{
+		"Portrait": 1, "Character": "green", "Expression": "knifepoint",
+		"Text": "Does that sound fair to you, Boris?"
+	},
+	{
+		"Portrait": 0, "Character": "red", "Expression": "neutral",
+		"Text": "Uhhh, yeah! I guess that plan works."
+	},
+	{
+		"Portrait": 1, "Character": "green", "Expression": "knifepoint",
+		"Text": "So, what will it be, Mr. Pickleberry?"
+	},
+	{
+		"Portrait": 1, "Character": "green", "Expression": "knifepoint", "Effect": "wave",
+		"Text": "Choose wisely."
+	},
+	{
+		"Portrait": 0, "Character": "travis", "Expression": "neutral",
+		"Text": "Oh well I guess I sort of have to fight you then don't I."
+	},
+	{
+		"Portrait": 1, "Character": "red", "Expression": "neutral",
+		"Text": "BOOOYAAHHHHH, LET'S ROCK!!!!!!"
+	}
+]

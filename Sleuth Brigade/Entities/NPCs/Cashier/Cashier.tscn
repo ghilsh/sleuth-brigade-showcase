@@ -1,0 +1,14 @@
+[gd_scene load_steps=3 format=3 uid="uid://olipd3itpgx5"]
+
+[ext_resource type="PackedScene" uid="uid://duxvg4yh4tj66" path="res://Entities/NPCs/npc.tscn" id="1_1bo7l"]
+[ext_resource type="Texture2D" uid="uid://d3tp7qvjmroda" path="res://Assets/Images/cashier.png" id="2_cr8sj"]
+
+[node name="Cashier" instance=ExtResource("1_1bo7l")]
+dialog = &"Cashier"
+
+[node name="Shadow" parent="." index="0"]
+position = Vector2(-2, -3)
+
+[node name="Sprite" parent="." index="1"]
+position = Vector2(0, -56)
+texture = ExtResource("2_cr8sj")

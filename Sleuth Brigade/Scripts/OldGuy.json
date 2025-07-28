@@ -1,0 +1,34 @@
+[
+	{
+		"Portrait": 1, "Character": "gramps", "Expression": "lookback", "Setup": [0,"travis"],
+		"Text": "Bah!"
+	},
+	{
+		"Portrait": 1, "Character": "gramps", "Expression": "lookback",
+		"Text": "... Grumble grumble..."
+	},
+	{
+		"Portrait": 1, "Character": "gramps", "Expression": "lookback",
+		"Text": "... Hmph!"
+	},
+	{
+		"Portrait": 0, "Character": "travis", "Expression": "neutral",
+		"Text": "What seems to be the matter sir?"
+	},
+	{
+		"Portrait": 1, "Character": "gramps", "Expression": "neutral",
+		"Text": "Bah! I was taking a leisurely stroll from my home up north through that crevice by the tuck shop..."
+	},
+	{
+		"Portrait": 1, "Character": "gramps", "Expression": "neutral",
+		"Text": "... But by the time I was making my way back, the dang thing already littered up with monsters!"
+	},
+	{
+		"Portrait": 1, "Character": "gramps", "Expression": "neutral",
+		"Text": "Old men such as myself don't bring this one out lightly, but BAH HUMBUG!"
+	},
+	{
+		"Portrait": 1, "Character": "gramps", "Expression": "neutral", "Tag": "spoken",
+		"Text": "And I'll say it again dammit: BAH HUMBUG!!!"
+	}
+]

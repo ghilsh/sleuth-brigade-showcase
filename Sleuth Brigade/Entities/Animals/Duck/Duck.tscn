@@ -1,0 +1,141 @@
+[gd_scene load_steps=8 format=3 uid="uid://dcli46yucdmw6"]
+
+[ext_resource type="Texture2D" uid="uid://d2tij0dvqh4u5" path="res://Assets/Images/duck.png" id="1_mmfhr"]
+[ext_resource type="Script" path="res://Entities/Animals/Duck/Duck.gd" id="1_w8vv7"]
+[ext_resource type="AudioStream" uid="uid://ciwhjcfprf3ft" path="res://Assets/Audio/Sounds/snd_quack.ogg" id="3_p235m"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_be5jb"]
+size = Vector2(38, 5)
+
+[sub_resource type="Animation" id="Animation_q8p56"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Quack:playing")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Sprite:scale")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(2, 2)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Sprite:position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(4.76837e-07, -15)]
+}
+
+[sub_resource type="Animation" id="Animation_h1rpi"]
+resource_name = "quack"
+length = 0.3
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [1, 0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Quack:playing")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Sprite:scale")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(2, 2), Vector2(1.83333, 2.13333), Vector2(2.16667, 1.73333), Vector2(2, 2)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Sprite:position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(4.76837e-07, -15), Vector2(2.38419e-07, -16), Vector2(-3.45707e-06, -13), Vector2(4.76837e-07, -15)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_bvhy5"]
+_data = {
+"RESET": SubResource("Animation_q8p56"),
+"quack": SubResource("Animation_h1rpi")
+}
+
+[node name="Duck" type="CharacterBody2D"]
+script = ExtResource("1_w8vv7")
+
+[node name="Sprite" type="Sprite2D" parent="."]
+position = Vector2(4.76837e-07, -15)
+scale = Vector2(2, 2)
+texture = ExtResource("1_mmfhr")
+hframes = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-1, -2.5)
+shape = SubResource("RectangleShape2D_be5jb")
+
+[node name="Timer" type="Timer" parent="."]
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_bvhy5")
+}
+
+[node name="Quack" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("3_p235m")
+bus = &"sfx"

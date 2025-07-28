@@ -1,0 +1,66 @@
+[gd_scene load_steps=9 format=3 uid="uid://cf7wehaj5eety"]
+
+[ext_resource type="Script" path="res://Screens/Rooms/Room.gd" id="1_2panc"]
+[ext_resource type="TileSet" uid="uid://dujh74m77r00h" path="res://Tiles/cave_tiles.tres" id="2_guj3d"]
+[ext_resource type="TileSet" uid="uid://1v5miktec20a" path="res://Tiles/navigation_tiles.tres" id="3_esxkp"]
+[ext_resource type="PackedScene" uid="uid://xtkxbu8bj7iq" path="res://Entities/Enemies/Meatball/Meatball.tscn" id="4_0hyp8"]
+[ext_resource type="PackedScene" uid="uid://byhmbw73rxff0" path="res://Entities/Player/Player.tscn" id="5_xv8vm"]
+[ext_resource type="PackedScene" uid="uid://dqqvwk2khnl5r" path="res://Items/Speaker.tscn" id="7_ivars"]
+[ext_resource type="Script" path="res://General/Camera.gd" id="9_x3qed"]
+
+[sub_resource type="NavigationPolygon" id="NavigationPolygon_tike4"]
+vertices = PackedVector2Array(953, 505, 199, 505, 199, 391, 583, 391, 953, 263, 583, 263, 1145, 7, 1145, 649, 1031, 519, 1031, 249, 967, 249, 967, 185, 7, 7, 569, 185, 569, 249, 505, 249, 505, 313, 185, 313, 185, 377, 121, 377, 121, 519, 185, 519, 185, 583, 7, 649, 967, 583, 967, 519)
+polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2, 3), PackedInt32Array(4, 0, 3, 5), PackedInt32Array(6, 7, 8, 9), PackedInt32Array(9, 10, 11, 6), PackedInt32Array(12, 6, 11, 13), PackedInt32Array(13, 14, 15, 12), PackedInt32Array(15, 16, 17, 12), PackedInt32Array(17, 18, 19, 12), PackedInt32Array(20, 21, 22, 23), PackedInt32Array(24, 25, 8, 7), PackedInt32Array(24, 7, 23, 22), PackedInt32Array(20, 23, 12, 19)])
+outlines = Array[PackedVector2Array]([PackedVector2Array(1152, 0, 1152, 656, 0, 656, 0, 0)])
+source_geometry_mode = 1
+source_geometry_group_name = &"navigation"
+agent_radius = 7.0
+
+[node name="RoomCave" type="Node2D"]
+script = ExtResource("1_2panc")
+outside = false
+ambience = &"cave"
+
+[node name="TileMap" type="TileMap" parent="."]
+z_index = -1
+y_sort_enabled = true
+tile_set = ExtResource("2_guj3d")
+format = 2
+layer_0/name = "main"
+layer_0/tile_data = PackedInt32Array(327683, 1, 3, 393219, 1, 4, 458755, 1, 5, 327684, 65537, 3, 393220, 65537, 4, 458756, 65537, 5, 393221, 65537, 4, 458757, 65537, 5, 393222, 65537, 4, 458758, 65537, 5, 393223, 65537, 4, 458759, 65537, 5, 327688, 131073, 3, 393224, 65537, 4, 458760, 65537, 5, 327689, 1, 4, 393225, 65537, 4, 458761, 65537, 5, 327690, 65537, 4, 393226, 65537, 4, 458762, 65537, 5, 327691, 65537, 4, 393227, 65537, 4, 458763, 65537, 5, 327692, 65537, 4, 393228, 65537, 4, 458764, 65537, 5, 327693, 65537, 4, 393229, 65537, 4, 458765, 65537, 5, 327694, 131073, 4, 393230, 131073, 4, 458766, 131073, 5, 262147, 1, 1, 262148, 65537, 1, 262154, 65537, 4, 262155, 65537, 4, 262156, 65537, 4, 262157, 65537, 4, 262158, 131073, 4, 262152, 131073, 1, 262153, 1, 4, 196611, 1, 0, 196612, 65537, 0, 65545, 1, 0, 131081, 1, 1, 196617, 1, 3, 65546, 65537, 0, 131082, 65537, 1, 196618, 65537, 3, 65547, 65537, 0, 131083, 65537, 1, 196619, 65537, 3, 65548, 65537, 0, 131084, 65537, 1, 196620, 65537, 3, 65549, 65537, 0, 131085, 65537, 1, 196621, 65537, 3, 65550, 131073, 0, 131086, 131073, 1, 196622, 131073, 3, 196616, 131073, 0, 196614, 65537, 0, 262150, 65537, 1, 327686, 65537, 3, 196615, 65537, 0, 262151, 65537, 1, 327687, 65537, 3, 196613, 65537, 0, 262149, 65537, 1, 327685, 65537, 3)
+layer_1/name = "icicles"
+layer_1/y_sort_enabled = true
+layer_1/z_index = 1
+layer_1/tile_data = PackedInt32Array(262153, 458753, 4, 262154, 458753, 4, 262155, 458753, 4, 262156, 458753, 4, 262157, 458753, 4, 262158, 458753, 4)
+
+[node name="Navigation" type="TileMap" parent="." groups=["navigation"]]
+visible = false
+tile_set = ExtResource("3_esxkp")
+rendering_quadrant_size = 64
+format = 2
+layer_0/z_index = 999
+layer_0/tile_data = PackedInt32Array(327683, 2, 0, 327684, 2, 0, 327685, 2, 0, 327686, 2, 0, 327687, 2, 0, 327688, 2, 0, 262152, 2, 0, 196617, 2, 0, 196618, 2, 0, 196619, 2, 0, 196620, 2, 0, 196621, 2, 0, 196622, 2, 0, 262159, 2, 0, 327695, 2, 0, 393231, 2, 0, 458767, 2, 0, 524302, 2, 0, 524301, 2, 0, 524300, 2, 0, 524299, 2, 0, 524298, 2, 0, 524297, 2, 0, 524296, 2, 0, 524295, 2, 0, 524294, 2, 0, 524293, 2, 0, 524292, 2, 0, 524291, 2, 0, 458754, 2, 0, 393218, 2, 0)
+
+[node name="NavigationRegion2D" type="NavigationRegion2D" parent="."]
+visible = false
+navigation_polygon = SubResource("NavigationPolygon_tike4")
+
+[node name="Meatball" parent="." instance=ExtResource("4_0hyp8")]
+position = Vector2(754, 296)
+
+[node name="Player" parent="." instance=ExtResource("5_xv8vm")]
+position = Vector2(372, 456)
+
+[node name="DirectionalLight2D" type="DirectionalLight2D" parent="."]
+energy = 0.5
+blend_mode = 1
+
+[node name="Camera2D" type="Camera2D" parent="."]
+limit_left = 0
+limit_top = 0
+limit_right = 1152
+limit_bottom = 648
+script = ExtResource("9_x3qed")
+
+[node name="Speaker" parent="." instance=ExtResource("7_ivars")]
+position = Vector2(449, 462)

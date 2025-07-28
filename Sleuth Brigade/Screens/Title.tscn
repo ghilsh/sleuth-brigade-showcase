@@ -1,0 +1,239 @@
+[gd_scene load_steps=17 format=3 uid="uid://cp4vmjcnnjvy2"]
+
+[ext_resource type="Script" path="res://Screens/Title.gd" id="1_fe0gh"]
+[ext_resource type="FontFile" uid="uid://6c8b2kkn2x1q" path="res://Assets/Fonts/PixeloidSans-nR3g1.ttf" id="1_osr5j"]
+[ext_resource type="Shader" path="res://UI/Scroll.gdshader" id="2_rgkle"]
+[ext_resource type="Texture2D" uid="uid://dhlw5h5lhfhqs" path="res://Assets/Images/title_bg.png" id="2_ybpmg"]
+[ext_resource type="Texture2D" uid="uid://bq0qgbsbngxuk" path="res://Assets/Images/title_travis.png" id="6_0r151"]
+[ext_resource type="Theme" uid="uid://dn5d38v6n5gsg" path="res://UI/button.tres" id="6_g0iut"]
+[ext_resource type="AudioStream" uid="uid://yrgencpsfejm" path="res://Assets/Audio/Sounds/snd_select.ogg" id="7_dkov5"]
+[ext_resource type="Texture2D" uid="uid://b6u6jv5jmdh1v" path="res://Assets/Images/Archive/slug.png" id="7_uvas1"]
+[ext_resource type="PackedScene" uid="uid://df861b84txmwp" path="res://UI/Options/Options.tscn" id="8_kp5c4"]
+[ext_resource type="AudioStream" uid="uid://32d8fmowvh7l" path="res://Assets/Audio/Sounds/snd_miss.ogg" id="9_l5a45"]
+[ext_resource type="PackedScene" uid="uid://bro1fmqnry7nw" path="res://UI/SaveFile.tscn" id="11_dyrq2"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_7lfkb"]
+shader = ExtResource("2_rgkle")
+shader_parameter/speed = 0.3
+
+[sub_resource type="Animation" id="Animation_680qp"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:scale")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(7, 7)]
+}
+
+[sub_resource type="Animation" id="Animation_mtiw4"]
+resource_name = "change_pose"
+length = 0.2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(-0.499983, 18), Vector2(-1.43051e-06, -7.50001), Vector2(0, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:scale")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(7.42593, 6.53846), Vector2(6.77778, 7.19231), Vector2(7, 7)]
+}
+
+[sub_resource type="Animation" id="Animation_s5au7"]
+resource_name = "flip"
+length = 0.2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(7, 7), Vector2(-7, 7)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_rct17"]
+_data = {
+"RESET": SubResource("Animation_680qp"),
+"change_pose": SubResource("Animation_mtiw4"),
+"flip": SubResource("Animation_s5au7")
+}
+
+[node name="Title" type="CanvasLayer"]
+script = ExtResource("1_fe0gh")
+
+[node name="Bg" type="TextureRect" parent="."]
+modulate = Color(0.7, 0.7, 0.7, 1)
+material = SubResource("ShaderMaterial_7lfkb")
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -656.0
+offset_top = -293.0
+offset_right = -904.0
+offset_bottom = -470.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(2, 2)
+texture = ExtResource("2_ybpmg")
+stretch_mode = 1
+
+[node name="Title" type="RichTextLabel" parent="."]
+offset_left = 465.0
+offset_top = 35.0
+offset_right = 1127.0
+offset_bottom = 402.0
+theme_override_colors/default_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 25
+theme_override_fonts/normal_font = ExtResource("1_osr5j")
+theme_override_font_sizes/normal_font_size = 144
+bbcode_enabled = true
+text = "[wave amp=50.0 freq=5.0 connected=1] [color=forest_green]Sleuth 
+[color=dark_orange] Brigade"
+
+[node name="Buttons" type="VBoxContainer" parent="."]
+offset_left = 578.0
+offset_top = 385.0
+offset_right = 842.0
+offset_bottom = 624.0
+theme = ExtResource("6_g0iut")
+alignment = 1
+metadata/_edit_group_ = true
+
+[node name="New" type="Button" parent="Buttons"]
+layout_mode = 2
+focus_neighbor_top = NodePath("../Quit")
+text = "New Game"
+alignment = 0
+
+[node name="Continue" type="Button" parent="Buttons"]
+layout_mode = 2
+text = "Continue"
+alignment = 0
+
+[node name="Options" type="Button" parent="Buttons"]
+layout_mode = 2
+text = "Options"
+alignment = 0
+
+[node name="Kickstarter" type="Button" parent="Buttons"]
+layout_mode = 2
+text = "Kickstarter"
+alignment = 0
+
+[node name="Quit" type="Button" parent="Buttons"]
+layout_mode = 2
+focus_neighbor_bottom = NodePath("../New")
+text = "Quit"
+alignment = 0
+
+[node name="OptionsHeader" type="RichTextLabel" parent="."]
+offset_left = -616.0
+offset_top = 112.0
+offset_right = 63.0
+offset_bottom = 296.0
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 25
+theme_override_fonts/normal_font = ExtResource("1_osr5j")
+theme_override_font_sizes/normal_font_size = 144
+bbcode_enabled = true
+text = " [wave amp=50.0 freq=5.0 connected=1]Options [/wave]"
+
+[node name="Options" parent="." instance=ExtResource("8_kp5c4")]
+offset_left = -440.0
+offset_top = 296.0
+offset_right = -36.0
+offset_bottom = 628.0
+
+[node name="Info" type="Label" parent="."]
+offset_left = 1000.0
+offset_top = 592.0
+offset_right = 1144.0
+offset_bottom = 640.0
+theme_override_fonts/font = ExtResource("1_osr5j")
+theme_override_font_sizes/font_size = 18
+text = "V1.0 DEMO
+[C] ghilsh 2025"
+horizontal_alignment = 2
+
+[node name="Travis" type="Node2D" parent="."]
+position = Vector2(290, 375)
+
+[node name="Sprite" type="Sprite2D" parent="Travis"]
+scale = Vector2(7, 7)
+texture = ExtResource("6_0r151")
+hframes = 5
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Travis"]
+root_node = NodePath("../Sprite")
+libraries = {
+"": SubResource("AnimationLibrary_rct17")
+}
+
+[node name="Sounds" type="Node" parent="."]
+
+[node name="Select" type="AudioStreamPlayer" parent="Sounds"]
+stream = ExtResource("7_dkov5")
+bus = &"sfx"
+
+[node name="Swoosh" type="AudioStreamPlayer" parent="Sounds"]
+stream = ExtResource("9_l5a45")
+volume_db = -8.0
+pitch_scale = 0.7
+bus = &"sfx"
+
+[node name="Slug" type="Sprite2D" parent="."]
+position = Vector2(1544, 304)
+scale = Vector2(18.7382, 10.2292)
+texture = ExtResource("7_uvas1")
+
+[node name="SaveFile" parent="." instance=ExtResource("11_dyrq2")]
+position = Vector2(576, -320)

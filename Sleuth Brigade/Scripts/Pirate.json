@@ -1,0 +1,34 @@
+[
+	{
+		"Portrait": 1, "Character": "pirate", "Expression": "neutral", "Setup": [0,"travis"],
+		"Text": "Ahoy landlubber! What brings ye to my humble abode?"
+	},
+	{
+		"Portrait": 0, "Character": "travis", "Expression": "neutral",
+		"Text": "Just investigating cult activity on this island. Would you happen to know anything about that?"
+	},
+	{
+		"Portrait": 1, "Character": "pirate", "Expression": "neutral",
+		"Text": "Not at all, matey! The only thing that catches me eye is the vast ocean that stands before ye here!"
+	},
+	{
+		"Portrait": 0, "Character": "travis", "Expression": "neutral",
+		"Text": "... That's a lake."
+	},
+	{
+		"Portrait": 1, "Character": "pirate", "Expression": "neutral",
+		"Text": "Not to this ol' seadog it ain't, son!"
+	},
+	{
+		"Portrait": 1, "Character": "pirate", "Expression": "neutral",
+		"Text": "I've dedicated me life to unearthing this 'ere ocean! It's as though she calls to me, ye see!"
+	},
+	{
+		"Portrait": 1, "Character": "pirate", "Expression": "neutral",
+		"Text": "Day an' night I stand on me plank and watch her flow back and forth! It be a proper kinship we have, I tell ye!"
+	},
+	{
+		"Portrait": 0, "Character": "travis", "Expression": "neutral",
+		"Text": "Okay sure whatever."
+	}
+]

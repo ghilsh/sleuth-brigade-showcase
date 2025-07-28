@@ -1,0 +1,54 @@
+[
+	{
+		"Portrait": 1, "Character": "hunter", "Expression": "lookback", "Setup": [0,"travis"], "Tag": "cutscene",
+		"Text": "... And here I was thinking that cretin was bound to tear you a new one..."
+	},
+	{
+		"Portrait": 1, "Character": "hunter", "Expression": "neutral",
+		"Text": "Colour me impressed, kid. You clearly know your stuff!"
+	},
+	{
+		"Portrait": 1, "Character": "hunter", "Expression": "shifty",
+		"Text": "Tell me, what brings young talent like yourself to a shithole like this?"
+	},
+	{
+		"Portrait": 0, "Character": "travis", "Expression": "neutral",
+		"Text": "Heh, not much. Just workin' with the feds as usual. It's kind of my thing."
+	},
+	{
+		"Portrait": 0, "Character": "travis", "Expression": "neutral",
+		"Text": "Recently we've been getting reports of cult behaviour operating on this island."
+	},
+	{
+		"Portrait": 0, "Character": "travis", "Expression": "neutral",
+		"Text": "Nothing super concrete or anything, but still worth looking into."
+	},
+	{
+		"Portrait": 1, "Character": "hunter", "Expression": "shifty",
+		"Text": "Cult behaviour, ay? I might've heard a thing or two about that..."
+	},
+	{
+		"Portrait": 1, "Character": "hunter", "Expression": "shifty",
+		"Text": "Nothing beyond a hushed whisper here and there, but I'd definitely wager some shady stuff is going down round these parts..."
+	},
+	{
+		"Portrait": 1, "Character": "hunter", "Expression": "lookback",
+		"Text": "I'd recommened asking around the local population for any leads."
+	},
+	{
+		"Portrait": 1, "Character": "hunter", "Expression": "neutral",
+		"Text": "Whlist small in numbers, they're a damn characterful bunch."
+	},
+	{
+		"Portrait": 1, "Character": "hunter", "Expression": "neutral", "Tag": "normal",
+		"Text": "So, what, you embarking on this mission yourself?"
+	},
+	{
+		"Portrait": 0, "Character": "travis", "Expression": "neutral",
+		"Text": "Yeah, pretty much."
+	},
+	{
+		"Portrait": 1, "Character": "hunter", "Expression": "neutral", "Tag": "spoken",
+		"Text": "What are you looking at?"
+	}
+]
